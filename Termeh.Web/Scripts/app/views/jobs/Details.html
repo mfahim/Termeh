@@ -1,0 +1,30 @@
+﻿<div>
+    <h5 class="ui header">Job Details</h5>
+    <div class="ui divider"></div>
+    <div style="font-size:small">
+        <div>
+            <strong>{{job.Name}}</strong> <br />
+            <p>{{job.Description}}</p>
+            <div>
+
+                <div>
+                    <span style="width:50%;">Quantity 1:</span>{{job.Quantity}}
+                </div>
+
+                <div>
+                    <span style="width:50%;">DueDate:</span>{{job.DueDate}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br />
+    <div>
+        <a class="ui blue i button" href="/Activities/Add/?resourceId={{resource.Id}}">New Activity</a>
+        <a class="ui blue button" href="/Jobs/">Back</a>
+    </div>
+    <div>
+    </div>
+    <br /><br />
+    <resource-activity-list activities="resource.Attachments" />
+</div>

@@ -1,0 +1,47 @@
+﻿<cst-Top-Menu></cst-Top-Menu>
+<h5 class="ui header">Jobs</h5>
+<div class="ui divider"></div>
+<div>
+    <table class="ui small table segment">
+        <thead>
+            <tr>
+                <th>
+                    Name
+                </th>
+                <th>
+                    Description
+                </th>
+                <th>
+                </th>
+                <th>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr></tr>
+            <tr>
+                <td class="danger" colspan="4" data-ng-show="jobs.length == 0">
+                    There are no jobs
+                </td>
+            </tr>
+            <tr data-ng-repeat="job in jobs">
+                <td>
+                    <a href="/Jobs/{{job.Id}}">{{job.Name}}</a>
+                </td>
+                <td>
+                    {{job.Description}}
+                </td>
+                <td style="width: 4%;">
+                    <a href="/Jobs/Edit/{{job.Id}}"><i class="edit icon"></i></a>
+                </td>
+                <td style="width: 4%;">
+                    <a href="javascript:;" data-ng-click="deleteJob(job.Id)"><i class="trash icon"></i></a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div style="float: right;">
+        <a class="ui mini blue button" href="/Jobs/Add">Create new</a>
+    </div>
+</div>
+

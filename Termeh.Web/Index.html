@@ -1,0 +1,49 @@
+﻿<!doctype html>
+<html data-ng-app="resourceManagerApp">
+<head>
+    <META HTTP-EQUIV="Cache-Control" CONTENT="max-age=0">    
+    <META HTTP-EQUIV="Cache-Control" CONTENT="no-cache, no-store, must-revalidate">    
+    <META http-equiv="expires" content="Mon, 22 Jul 2002 11:12:01 GMT">
+    <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+    <meta charset="utf-8">
+    <title>Termeh JobTrack Application</title>
+    <link rel="stylesheet" href="Content/themes/semantic/semantic.css" />
+    <link rel="stylesheet" href="Content/themes/Site.css" />
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+    <link rel="stylesheet" href="Content/themes/select2/select2.css" />
+</head>
+<body>
+   <div ng-controller="ResourceMngrCtrl">
+        <section id="main">
+            <div data-ng-view></div>
+        </section>
+    </div>
+    <script src="/Scripts/libs/jquery-1.9.1.js"></script>
+    <script src="/Scripts/libs/jquery-ui-1.10.3.min.js"></script>
+    <script src="/Scripts/libs/select2/select2.js"></script>
+    <script src="/Scripts/libs/angular-1.2.11.min.js"></script>
+    <script src="/Scripts/libs/angular-resource-1.2.9.min.js"></script>
+    <script src="/Scripts/libs/angular-route-1.2.9.min.js"></script>
+    <script src="/Scripts/libs/angular-animate-1.2.9.min.js"></script>
+    <script src="/Scripts/libs/angular-ui/select2.js"></script>
+    <script src="/Scripts/libs/semantic/semantic.js"></script>
+    <script src="/Scripts/config.js"></script>
+    <!--<script src="/Scripts/app/ngscripts.js"></script>-->
+    <script src="/Scripts/app/app.js?version=1.0"></script>
+    <script src="/Scripts/app/services/shared/helper.js"></script>
+    <script src="/Scripts/app/services/shared/confirmation.js"></script>
+    <script src="/Scripts/app/services/jobs/job.js"></script>
+    <script src="/Scripts/app/controllers/home/home.js"></script>
+    <script src="/Scripts/app/controllers/jobs/job.js"></script>
+    <script src="/Scripts/app/controllers/jobs/jobs.js"></script>
+    <script src="/Scripts/app/controllers/jobs/jobEdit.js"></script>
+
+
+    <script src="/Scripts/app/controllers/shared/resourceManager.js"></script>
+    <script src="/Scripts/app/services/shared/resourceManager.js"></script>
+    <script src="/Scripts/app/directives/shared/datepicker.js"></script>
+    <script src="/Scripts/app/directives/shared/modal.js"></script>
+    <script src="/Scripts/app/directives/shared/topmenu.js"></script>
+    <script src="/Scripts/app/directives/shared/loadingoverlay.js"></script>
+</body>
+</html>
