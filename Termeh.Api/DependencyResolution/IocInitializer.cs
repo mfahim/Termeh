@@ -1,5 +1,5 @@
-﻿using StructureMap;
-using StructureMap.Graph;
+﻿using ShortBus;
+using StructureMap;
 
 namespace JobTrack.Api.DependencyResolution
 {
@@ -13,6 +13,8 @@ namespace JobTrack.Api.DependencyResolution
                                                          scan.AssembliesFromApplicationBaseDirectory();
                                                          scan.WithDefaultConventions();
                                                          scan.LookForRegistries();
+                                                         scan.AddAllTypesOf(typeof(IQueryHandler<,>));
+                                                         scan.AddAllTypesOf(typeof(ICommandHandler<>));
                                                      }));
 
             return ObjectFactory.Container;

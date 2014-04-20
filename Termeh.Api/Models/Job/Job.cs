@@ -6,7 +6,7 @@ namespace JobTrack.Api.Models.Job
     public class Job
     {
         public int Id { get; set; }
-        public int JobNumber { get; set; }
+        public decimal JobNumber { get; set; }
         public string Name { get; set; }
         public JobStatus Status { get; set; } 
         public JobUser SalesRep { get; set; }
