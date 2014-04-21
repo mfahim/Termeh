@@ -15,7 +15,7 @@ namespace JobTrack.Api.Controllers
         {
             var context = (JobTrackDbContext)StructureMap.ObjectFactory.GetInstance<DbContext>();
             context.CreateDataBase();
-            return View("Home");
+            return View("Index");
         }
     }
 }

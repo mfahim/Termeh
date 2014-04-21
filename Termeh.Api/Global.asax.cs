@@ -17,6 +17,8 @@ namespace JobTrack.Api
             WebApiConfig.Register(GlobalConfiguration.Configuration);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+
+            ApplicationConverterBootStrapper.Start();
         }
     }
 }

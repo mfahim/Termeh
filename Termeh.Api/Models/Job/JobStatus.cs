@@ -1,6 +1,6 @@
 ﻿namespace JobTrack.Api.Models.Job
 {
-    public enum JobStatus
+    public enum JobStatusTypes
     {
         New,
         ArtOnProof,
