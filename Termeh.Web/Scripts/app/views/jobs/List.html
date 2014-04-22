@@ -1,6 +1,6 @@
 ﻿<cst-Top-Menu></cst-Top-Menu>
 <div class="row">
-    <h5 class="ui header">Jobs</h5>
+    <h5 class="ui header">Jobs List</h5>
     <div style="float: right;">
         <a class="ui mini button" href="/Jobs/Add">New</a>
     </div>    
@@ -9,16 +9,10 @@
     <table class="ui small table segment">
         <thead>
             <tr>
-                <th>
-                    Name
-                </th>
-                <th>
-                    Description
-                </th>
-                <th>
-                </th>
-                <th>
-                </th>
+                <th>Job Number</th>
+                <th>Name</th>
+                <th>Quantity</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -30,15 +24,16 @@
             </tr>
             <tr data-ng-repeat="job in jobs">
                 <td>
-                    <a href="/Jobs/{{job.Id}}">{{job.Name}}</a>
+                    <a href="/Jobs/{{job.Id}}">{{job.JobNumber}}</a>
                 </td>
                 <td>
-                    {{job.Description}}
+                    {{job.Name}}
                 </td>
-                <td style="width: 4%;">
+                <td>
+                    {{job.Quantity}}
+                </td>
+                <td style="width: 10%;">
                     <a href="/Jobs/Edit/{{job.Id}}"><i class="edit icon"></i></a>
-                </td>
-                <td style="width: 4%;">
                     <a href="javascript:;" data-ng-click="deleteJob(job.Id)"><i class="trash icon"></i></a>
                 </td>
             </tr>
