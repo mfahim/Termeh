@@ -11,17 +11,14 @@
         deleteJob: function (jobId) {
             return jobServiceInstance.delete({ jobId: jobId }).$promise;
         },
-        addJob: function (resource) {
-            return jobServiceInstance.save(resource).$promise;
+        addJob: function (job) {
+            return jobServiceInstance.save(job).$promise;
         },
-        editJob: function (resource) {
-            return jobServiceInstance.update(resource).$promise;
+        editJob: function (job) {
+            return jobServiceInstance.update(job).$promise;
         },
         getJob: function (id) {
             return jobServiceInstance.get({ jobId: id });
-        },
-        createJobAddFormModel: function () {
-            return jobServiceInstance.getLocations();
         },
         createJobEditFormModel: function (jobId) {
             var sample = $q.all([this.getJob(jobId).$promise]);

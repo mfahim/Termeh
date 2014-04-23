@@ -24,16 +24,19 @@ namespace JobTrack.Api.Controllers
             return Ok(model.Data);
         }
 
-        public IHttpActionResult Post(EditJobCommand jobViewModel)
+        [HttpPost]
+        public IHttpActionResult Post(AddJobCommand jobViewModel)
         {
             var response = Mediator.Send(jobViewModel);
 
             if (response.HasException())
                 return InternalServerError(BuildUserFriendlyMessage(response));
 
+            //return Ok(jobViewModel);
             return Created(Url.Link("DefaultApi", new { controller = "Job" }), jobViewModel);
         }
 
+        [HttpPut]
         public IHttpActionResult Put(int id, EditJobCommand jobViewModel)
         {
             var response = Mediator.Send(jobViewModel);
@@ -44,6 +47,7 @@ namespace JobTrack.Api.Controllers
             return Ok(jobViewModel);
         }
 
+        [HttpDelete]
         public IHttpActionResult DeleteResource(int id)
         {
             var response = Mediator.Send(new DeleteJobCommand() { Id = id });

@@ -60,6 +60,9 @@ namespace JobTrack.Api.Data.Queries
                 Name = message.Name,
                 Quantity = message.Quantity,
                 Description = message.Description,
+                JobStatusId = 1,
+                UserId = 1,
+                CreatedBy = 1
             });
 
             _context.SaveChanges();

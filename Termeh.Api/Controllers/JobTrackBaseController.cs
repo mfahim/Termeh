@@ -14,7 +14,7 @@ namespace JobTrack.Api.Controllers
             Mediator = mediator;
         }
 
-        public Exception BuildUserFriendlyMessage(Response response)
+        protected Exception BuildUserFriendlyMessage(Response response)
         {
             if (!response.HasException())
                 return null;
