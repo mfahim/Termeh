@@ -24,7 +24,6 @@ app.directive('confirmationModal', function () {
     };
 
     function closeModal() {
-        alert('closed');
         $('#modal').modal('hide');
     }
 });

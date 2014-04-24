@@ -11,9 +11,10 @@
 
         function init() {
             jobSvc.createJobEditFormModel($routeParams.jobId)
-         .then(function (data) {
-             $scope.job = data[0];
-         });
+            .then(function (data)
+            {
+                $scope.job = data[0];
+            });
         }
 
     }]);
