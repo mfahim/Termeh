@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace JobTrack.Api.Data.Context
 {
@@ -17,5 +18,6 @@ namespace JobTrack.Api.Data.Context
         public virtual User User { get; set; }
         public virtual int UserId { get; set; }
         public virtual int JobStatusId { get; set; }
+        public virtual IList<Attachment> Attachments { get; set; }
     }
 }

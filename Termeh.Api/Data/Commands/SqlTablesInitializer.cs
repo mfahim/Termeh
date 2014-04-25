@@ -8,6 +8,8 @@ namespace JobTrack.Api.Data.Commands
         protected override void Seed(JobTrackDbContext context)
         {
             InitJobStatuses(context);
+            InitBuiltinUsers(context);
+
             context.SaveChanges();
         }
 
@@ -20,6 +22,12 @@ namespace JobTrack.Api.Data.Commands
             jobStatuses.Add(new JobStatus() { Id = 4, Name = "Dispatched" });
             jobStatuses.Add(new JobStatus() { Id = 5, Name = "Finished" });
             jobStatuses.Add(new JobStatus() { Id = 6, Name = "Cancelled" });
+        }
+        
+        private static void InitBuiltinUsers(JobTrackDbContext context)
+        {
+            var users = context.DbSet<User>();
+            users.Add(new User() {Id = 1, FullName = "Admin", Email = "admin@test.com"});
         }
     }
 }

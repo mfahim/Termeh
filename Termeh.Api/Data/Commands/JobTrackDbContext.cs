@@ -16,6 +16,7 @@ namespace JobTrack.Api.Data.Commands
         public IDbSet<Job> Jobs { get; set; }
         public IDbSet<JobStatus> JobStatuses { get; set; }
         public IDbSet<User> Users { get; set; }
+        public IDbSet<Attachment> Attachments { get; set; }
 
         public virtual IDbSet<T> DbSet<T>() where T : class
         {

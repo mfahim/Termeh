@@ -9,7 +9,7 @@ namespace JobTrack.Api.Data.Context
             Jobs = new HashSet<Job>();
         }
 
-        public int UserId { get; set; }
+        public int Id { get; set; }
         public string IdentityToken { get; set; }
         public string FullName { get; set; }
         public string RepCode { get; set; }

@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace JobTrack.Api.Models.Job
 {
@@ -13,5 +14,6 @@ namespace JobTrack.Api.Models.Job
         public int CreatedBy { get; set; }
         public decimal Quantity { get; set; }
         public string Description { get; set; }
+        public IList<AttachmentView> AttchmentViews { get; set; }
     }
 }
