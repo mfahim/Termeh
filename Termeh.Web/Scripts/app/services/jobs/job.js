@@ -19,6 +19,13 @@
         },
         getJob: function (id) {
             return jobServiceInstance.get({ jobId: id });
+        },
+        createJobEditFormModel: function (jobId) {
+            var sample = $q.all([this.getJob(jobId).$promise]);
+            sample.then(function(data) {
+                return data;
+            });
+            return sample;
         }
     };
 }]);

@@ -173,6 +173,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\JobController.cs" />
+    <Compile Include="Controllers\JobStatusController.cs" />
     <Compile Include="Controllers\JobTrackBaseController.cs" />
     <Compile Include="Data\Context\Attachment.cs" />
     <Compile Include="Data\Context\User.cs" />
@@ -185,6 +186,7 @@
     <Compile Include="Data\Queries\IndexJobQuery.cs" />
     <Compile Include="Data\Queries\LogCommandHandler.cs" />
     <Compile Include="Data\Queries\ShowJobsHandler.cs" />
+    <Compile Include="Data\Queries\ShowJobStatusesQuery.cs" />
     <Compile Include="DependencyResolution\IocDependencyResolver.cs" />
     <Compile Include="DependencyResolution\IocInitializer.cs" />
     <Compile Include="DependencyResolution\FrameworkRegistry.cs" />
@@ -195,6 +197,7 @@
     </Compile>
     <Compile Include="Models\Job\AttachmentView.cs" />
     <Compile Include="Models\Job\JobStatus.cs" />
+    <Compile Include="Models\Job\JobStatusView.cs" />
     <Compile Include="Models\Job\JobView.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
