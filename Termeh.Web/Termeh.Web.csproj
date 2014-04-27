@@ -146,9 +146,11 @@
     <Content Include="Scripts\app\partials\Loader.html" />
     <Content Include="Scripts\app\partials\TopMenu.html" />
     <Content Include="Scripts\app\services\jobs\job.js" />
+    <Content Include="Scripts\app\services\jobs\jobStatus.js" />
     <Content Include="Scripts\app\services\shared\confirmation.js" />
     <Content Include="Scripts\app\services\shared\resourceManager.js" />
     <Content Include="Scripts\app\services\shared\helper.js" />
+    <Content Include="Scripts\app\services\users\user.js" />
     <Content Include="Scripts\app\views\about\About.html" />
     <Content Include="Scripts\app\views\home\Home.html" />
     <Content Include="Scripts\app\views\jobs\Add.html" />

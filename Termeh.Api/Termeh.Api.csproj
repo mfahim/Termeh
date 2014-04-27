@@ -175,6 +175,8 @@
     <Compile Include="Controllers\JobController.cs" />
     <Compile Include="Controllers\JobStatusController.cs" />
     <Compile Include="Controllers\JobTrackBaseController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Data\Commands\AddJobCommand.cs" />
     <Compile Include="Data\Context\Attachment.cs" />
     <Compile Include="Data\Context\User.cs" />
     <Compile Include="Data\Context\Job.cs" />
@@ -182,11 +184,17 @@
     <Compile Include="Data\Commands\JobTrackDbContext.cs" />
     <Compile Include="Data\Commands\SqlTablesInitializer.cs" />
     <Compile Include="Data\Commands\TermehContextException.cs" />
-    <Compile Include="Data\Queries\ApplicationConverterBootStrapper.cs" />
-    <Compile Include="Data\Queries\IndexJobQuery.cs" />
+    <Compile Include="Data\Commands\AddJobHandler.cs" />
+    <Compile Include="Data\Commands\DeleteJobHandler.cs" />
+    <Compile Include="Data\Commands\EditJobHandler.cs" />
+    <Compile Include="Data\Queries\Job\IndexJobQuery.cs" />
+    <Compile Include="Data\Queries\Job\IndexJobsHandler.cs" />
+    <Compile Include="Data\Queries\LogCommand.cs" />
     <Compile Include="Data\Queries\LogCommandHandler.cs" />
-    <Compile Include="Data\Queries\ShowJobsHandler.cs" />
-    <Compile Include="Data\Queries\ShowJobStatusesQuery.cs" />
+    <Compile Include="Data\Queries\Job\ShowJobsHandler.cs" />
+    <Compile Include="Data\Queries\JobStatus\ShowJobStatusesQuery.cs" />
+    <Compile Include="Data\Queries\User\ShowUsersHandler.cs" />
+    <Compile Include="Data\Queries\User\ShowUsersQuery.cs" />
     <Compile Include="DependencyResolution\IocDependencyResolver.cs" />
     <Compile Include="DependencyResolution\IocInitializer.cs" />
     <Compile Include="DependencyResolution\FrameworkRegistry.cs" />
@@ -199,6 +207,7 @@
     <Compile Include="Models\Job\JobStatus.cs" />
     <Compile Include="Models\Job\JobStatusView.cs" />
     <Compile Include="Models\Job\JobView.cs" />
+    <Compile Include="Models\User\UserView.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

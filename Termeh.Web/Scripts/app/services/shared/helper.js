@@ -17,6 +17,10 @@
             { jobId: '@Id' },
             { 'update': { method: 'PUT' } }),
         
+        JobStatus: $resource(buildUrl('api/JobStatus/')),
+
+        User: $resource(buildUrl('api/User/')),
+
         setAuthroizationHeader: function (value) {
             $http.defaults.headers.common.Authorization = "Bearer " + value;
         }

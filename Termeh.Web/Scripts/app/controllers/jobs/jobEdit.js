@@ -1,5 +1,5 @@
-﻿app.controller('JobEditCtrl', ['$scope', '$location', '$routeParams', 'jobSvc',
-    function ($scope, $location, $routeParams, jobSvc) {
+﻿app.controller('JobEditCtrl', ['$scope', '$location', '$routeParams', 'jobSvc', 'userSvc',
+    function ($scope, $location, $routeParams, jobSvc, userSvc) {
 
         init();
 
@@ -14,6 +14,10 @@
             .then(function (data)
             {
                 $scope.job = data[0];
+            });
+
+            userSvc.get().$promise.then(function (data) {
+                $scope.users = data;
             });
         }
 

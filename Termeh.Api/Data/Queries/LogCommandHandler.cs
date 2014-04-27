@@ -9,7 +9,7 @@ namespace JobTrack.Api.Data.Queries
 
         public LogCommandHandler(ILog logger)
         {
-            this._logger = logger;
+            _logger = logger;
         }
 
         public void Handle(LogCommand message)
