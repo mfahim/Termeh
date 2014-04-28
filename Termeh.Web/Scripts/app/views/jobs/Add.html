@@ -8,25 +8,29 @@
         <label for="jobNumber">Job Number</label>
         <input type="text" id="jobNumber" placeholder="Job Number" required data-ng-model="job.JobNumber" />
     </div>
-    <div class="ui divider"></div>
     <div class="field">
         <label for="jobNumber">Name</label>
         <input type="text" id="name" placeholder="Name" required data-ng-model="job.Name" />
     </div>
-    <div class="ui divider"></div>
     <div class="field">
         <label for="description">Description</label>
         <textarea id="description" placeholder="Description" required data-ng-model="job.Description"></textarea>
     </div>
-    <div class="ui divider"></div>
     <div class="field">
         <label for="quantity">Quantity</label>
         <input type="text" id="quantity" placeholder="Quantity" required data-ng-model="job.Quantity" />
     </div>
     <div class="ui divider"></div>
+    <div class="field">
+        <label for="quantity">Assigned to </label>
+        <select ui-select2 style="width:100%;" id='userId' ng-required="true" data-placeholder="J" ng-model="job.userId">
+            <option value="">--Select--</option>
+            <option ng-repeat="p in users" value="{{p.Id}}">{{p.FullName}}</option>
+        </select>
+    </div>
+    <div class="ui divider"></div>
     <div class="inline field">
-        <button data-ng-disabled="jobform.$invalid" data-ng-click="addJob(job)"
-                class="ui blue mini button">
+        <button data-ng-disabled="jobform.$invalid" data-ng-click="addJob(job)" class="ui blue mini button">
             Submit
         </button>
         <a class="ui black mini button" href="/Jobs">Cancel</a>
