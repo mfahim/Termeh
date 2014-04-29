@@ -5,11 +5,11 @@
         replace: true,
         link: function (scope, element, attrs, ngModelCtrl) {
             var dPicker = element.datepicker({
-                maxDate:0,
+                maxDate:100,
                 onSelect: function (d) {
                     ngModelCtrl.$setViewValue(d);
                     scope.$apply();
-                    ngModelCtrl.$setValidity('invalid', false);
+                    //ngModelCtrl.$setValidity('invalid', false);
                 }
             });
             element.on('keypress', function (e) {
