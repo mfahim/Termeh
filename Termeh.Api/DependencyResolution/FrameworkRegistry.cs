@@ -2,6 +2,7 @@
 using System.Data.Entity;
 using System.Reflection;
 using JobTrack.Api.Data.Commands;
+using JobTrack.Api.Data.Context;
 using StructureMap.Configuration.DSL;
 using log4net;
 

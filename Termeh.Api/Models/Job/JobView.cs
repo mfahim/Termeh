@@ -15,6 +15,7 @@ namespace JobTrack.Api.Models.Job
         public decimal Quantity { get; set; }
         public string Description { get; set; }
         public string AssignedTo { get; set; }
+        public int UserId { get; set; }
         public IList<AttachmentView> AttchmentViews { get; set; }
     }
 }

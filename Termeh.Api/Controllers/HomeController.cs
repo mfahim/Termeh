@@ -1,6 +1,7 @@
 ﻿using System.Data.Entity;
 using System.Web.Mvc;
 using JobTrack.Api.Data.Commands;
+using JobTrack.Api.Data.Context;
 
 namespace JobTrack.Api.Controllers
 {

@@ -1,4 +1,4 @@
-using JobTrack.Api.Data.Context;
+using JobTrack.Api.Data.Models;
 using JobTrack.Api.Models.Job;
 using JobTrack.Api.Models.User;
 

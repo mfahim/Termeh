@@ -1,6 +1,5 @@
 ﻿using System.Web.Http;
 using JobTrack.Api.Data.Commands;
-using JobTrack.Api.Data.Queries;
 using JobTrack.Api.Data.Queries.Job;
 using ShortBus;
 
