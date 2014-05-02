@@ -176,6 +176,8 @@
     <Compile Include="Controllers\JobStatusController.cs" />
     <Compile Include="Controllers\JobTrackBaseController.cs" />
     <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Data\Commands\AddJobAttachmentCommand.cs" />
+    <Compile Include="Data\Commands\AddJobAttachmentHandler.cs" />
     <Compile Include="Data\Commands\AddJobCommand.cs" />
     <Compile Include="Data\Models\Attachment.cs" />
     <Compile Include="Data\Models\User.cs" />
@@ -191,6 +193,8 @@
     <Compile Include="Data\Queries\Job\IndexJobsHandler.cs" />
     <Compile Include="Data\Queries\Helpers\LogCommand.cs" />
     <Compile Include="Data\Queries\Helpers\LogCommandHandler.cs" />
+    <Compile Include="Data\Queries\Job\ShowJobAttachmentsHandler.cs" />
+    <Compile Include="Data\Queries\Job\ShowJobAttachmentsQuery.cs" />
     <Compile Include="Data\Queries\Job\ShowJobsHandler.cs" />
     <Compile Include="Data\Queries\JobStatus\ShowJobStatusesQuery.cs" />
     <Compile Include="Data\Queries\User\ShowUsersHandler.cs" />

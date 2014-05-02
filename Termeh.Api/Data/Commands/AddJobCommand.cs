@@ -14,6 +14,7 @@ namespace JobTrack.Api.Data.Commands
         public decimal Quantity { get; set; }
         public int UserId { get; set; }
     }
+
     public class EditJobCommand : ICommand
     {
         public int Id { get; set; }
