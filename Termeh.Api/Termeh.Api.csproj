@@ -60,6 +60,12 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.0.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.0.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -179,8 +185,10 @@
     <Compile Include="Data\Commands\AddJobAttachmentCommand.cs" />
     <Compile Include="Data\Commands\AddJobAttachmentHandler.cs" />
     <Compile Include="Data\Commands\AddJobCommand.cs" />
+    <Compile Include="Data\Context\IdentityUserLoginConfiguration.cs" />
+    <Compile Include="Data\Context\IdentityUserRoleConfiguration.cs" />
     <Compile Include="Data\Models\Attachment.cs" />
-    <Compile Include="Data\Models\User.cs" />
+    <Compile Include="Data\Models\ApplicationUser.cs" />
     <Compile Include="Data\Models\Job.cs" />
     <Compile Include="Data\Models\JobStatus.cs" />
     <Compile Include="Data\Context\JobTrackDbContext.cs" />

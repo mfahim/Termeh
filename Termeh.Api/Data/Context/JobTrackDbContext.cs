@@ -3,10 +3,11 @@ using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using JobTrack.Api.Data.Models;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace JobTrack.Api.Data.Context
 {
-    public class JobTrackDbContext : DbContext
+    public class JobTrackDbContext : IdentityDbContext<ApplicationUser>
     {
         public JobTrackDbContext(string connectionString)
             : base(connectionString)
@@ -15,7 +16,6 @@ namespace JobTrack.Api.Data.Context
 
         public IDbSet<Job> Jobs { get; set; }
         public IDbSet<JobStatus> JobStatuses { get; set; }
-        public IDbSet<User> Users { get; set; }
         public IDbSet<Attachment> Attachments { get; set; }
 
         public virtual IDbSet<T> DbSet<T>() where T : class
@@ -26,6 +26,10 @@ namespace JobTrack.Api.Data.Context
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<ManyToManyCascadeDeleteConvention>();
+
+            //Configurations Auto generated tables for IdentityDbContext.
+            modelBuilder.Configurations.Add(new IdentityUserRoleConfiguration());
+            modelBuilder.Configurations.Add(new IdentityUserLoginConfiguration());
         }
 
         public int Commit()
@@ -42,15 +46,6 @@ namespace JobTrack.Api.Data.Context
             {
                 throw new TermehContextException(ex);
             }
-        }
-
-        public void CreateDataBase()
-        {
-            if (Database.Exists())
-                Database.Delete();
-
-            Database.SetInitializer(new SqlTablesInitializer());
-            Database.Initialize(true);
         }
     }
 }

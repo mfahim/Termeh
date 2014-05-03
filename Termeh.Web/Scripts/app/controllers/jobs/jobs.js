@@ -14,12 +14,14 @@
     init();
 
     function init() {
+        $scope.loading = true;
         loadJobs();
     }
 
     function loadJobs() {
         jobSvc.getJobs().$promise.then(function (data) {
             $scope.jobs = data;
+            $scope.loading = false;
         });
     }
 }]);

@@ -10,9 +10,9 @@ namespace JobTrack.Api
         {
             AutoMapper.Mapper.CreateMap<Job, JobView>()
                 .ForMember(p => p.Status, s => s.MapFrom(o => o.JobStatus.Id))
-                .ForMember(p => p.AssignedTo, s => s.MapFrom(o => o.User.FullName));
+                .ForMember(p => p.AssignedTo, s => s.MapFrom(o => o.ApplicationUser.FirstName));
             AutoMapper.Mapper.CreateMap<JobStatus, JobStatusView>();
-            AutoMapper.Mapper.CreateMap<User, UserView>();
+            AutoMapper.Mapper.CreateMap<ApplicationUser, UserView>();
         }
     }
 }
