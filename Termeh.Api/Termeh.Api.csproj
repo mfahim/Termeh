@@ -185,6 +185,7 @@
     <Compile Include="Data\Commands\AddJobAttachmentCommand.cs" />
     <Compile Include="Data\Commands\AddJobAttachmentHandler.cs" />
     <Compile Include="Data\Commands\AddJobCommand.cs" />
+    <Compile Include="Data\Context\IdentityUserConfiguration.cs" />
     <Compile Include="Data\Context\IdentityUserLoginConfiguration.cs" />
     <Compile Include="Data\Context\IdentityUserRoleConfiguration.cs" />
     <Compile Include="Data\Models\Attachment.cs" />

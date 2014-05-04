@@ -9,13 +9,13 @@ namespace JobTrack.Api.Data.Context
     {
         protected override void Seed(JobTrackDbContext context)
         {
-            CreateUsers(context);
+            InitApplicationUsers(context);
             InitJobStatuses(context);
 
             context.SaveChanges();
         }
 
-        private static void CreateUsers(JobTrackDbContext context)
+        private static void InitApplicationUsers(JobTrackDbContext context)
         {
             var userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
             userManager.UserValidator = new UserValidator<ApplicationUser>(userManager)
@@ -45,7 +45,7 @@ namespace JobTrack.Api.Data.Context
             if (userResult.Succeeded)
             {
                 //var user = userManager.FindByName("admin@marlabs.com");
-                //userManager.AddToRole<ApplicationUser>(user.Id, "Admin");
+                //userManager.AddToRole<>(user.Id, "Admin");
             }
             
         }

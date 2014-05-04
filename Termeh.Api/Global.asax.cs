@@ -1,9 +1,7 @@
-﻿using System.Data.Entity;
-using System.Net.Http.Formatting;
+﻿using System.Net.Http.Formatting;
 using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Routing;
-using JobTrack.Api.Data.Context;
 using JobTrack.Api.DependencyResolution;
 
 namespace JobTrack.Api

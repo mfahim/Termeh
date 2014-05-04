@@ -13,6 +13,10 @@
 
     function init() {
         
+        jobSvc.getJob($routeParams.jobId).$promise.then(function (data) {
+            $scope.job = data;
+        });
+
         userSvc.get().$promise.then(function (data) {
             $scope.users = data;
         });
