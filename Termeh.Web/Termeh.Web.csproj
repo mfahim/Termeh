@@ -146,6 +146,7 @@
     <Content Include="Scripts\app\partials\Loader.html" />
     <Content Include="Scripts\app\partials\TopMenu.html" />
     <Content Include="Scripts\app\services\jobs\job.js" />
+    <Content Include="Scripts\app\services\jobs\jobAttachment.js" />
     <Content Include="Scripts\app\services\jobs\jobStatus.js" />
     <Content Include="Scripts\app\services\shared\confirmation.js" />
     <Content Include="Scripts\app\services\shared\resourceManager.js" />
