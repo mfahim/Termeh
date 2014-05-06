@@ -1,5 +1,5 @@
-﻿app.controller('JobCtrl', ['$scope', '$routeParams', '$location', 'jobSvc', 'userSvc',
-    function ($scope, $routeParams, $location, jobSvc, userSvc) {
+﻿app.controller('JobCtrl', ['$scope', '$routeParams', '$location', 'jobSvc', 'userSvc', 'jobAttachmentSvc',
+    function ($scope, $routeParams, $location, jobSvc, userSvc, jobAttachmentSvc) {
         $scope.job = { hasActivites: false };
         
     $scope.addJob = function (jb) {
@@ -19,6 +19,10 @@
 
         userSvc.get().$promise.then(function (data) {
             $scope.users = data;
+        });
+        
+        jobAttachmentSvc.get($routeParams.jobId).$promise.then(function (data) {
+            $scope.jobAttachments = data;
         });
     }
 }]);
