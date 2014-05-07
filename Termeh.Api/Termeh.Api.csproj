@@ -178,6 +178,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\JobAttachmentController.cs" />
     <Compile Include="Controllers\JobController.cs" />
     <Compile Include="Controllers\JobStatusController.cs" />
     <Compile Include="Controllers\JobTrackBaseController.cs" />

@@ -21,7 +21,7 @@
             $scope.users = data;
         });
         
-        jobAttachmentSvc.get($routeParams.jobId).$promise.then(function (data) {
+        jobAttachmentSvc.getAttachmentsForAJob($routeParams.jobId).$promise.then(function (data) {
             $scope.jobAttachments = data;
         });
     }

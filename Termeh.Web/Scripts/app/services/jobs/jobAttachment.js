@@ -3,7 +3,7 @@
 
     return {
         getAttachmentsForAJob: function (jobId) {
-            return jobAttachService.query();
+            return jobAttachService.query({ jobId: jobId });
         },
         deleteJobAttachment: function (jobId) {
             return jobAttachService.delete({ jobId: jobId }).$promise;

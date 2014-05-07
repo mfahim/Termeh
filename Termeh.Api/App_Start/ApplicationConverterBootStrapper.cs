@@ -13,6 +13,7 @@ namespace JobTrack.Api
                 .ForMember(p => p.AssignedTo, s => s.MapFrom(o => o.ApplicationUser.FirstName));
             AutoMapper.Mapper.CreateMap<JobStatus, JobStatusView>();
             AutoMapper.Mapper.CreateMap<ApplicationUser, UserView>();
+            AutoMapper.Mapper.CreateMap<Attachment, AttachmentView>();
         }
     }
 }
