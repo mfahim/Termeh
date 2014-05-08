@@ -133,12 +133,14 @@
     <Content Include="Scripts\app\app.js" />
     <Content Include="Scripts\app\controllers\home\home.js" />
     <Content Include="Scripts\app\controllers\jobs\job.js" />
+    <Content Include="Scripts\app\controllers\jobs\jobAttachments.js" />
     <Content Include="Scripts\app\controllers\jobs\jobEdit.js" />
     <Content Include="Scripts\app\controllers\jobs\jobs.js" />
     <Content Include="Scripts\app\controllers\shared\resourceManager.js" />
     <Content Include="Scripts\app\directives\shared\confirmationmodal.js" />
     <Content Include="Scripts\app\directives\shared\datepicker.js" />
     <Content Include="Scripts\app\directives\shared\itemdelete.js" />
+    <Content Include="Scripts\app\directives\shared\jobAttachment.js" />
     <Content Include="Scripts\app\directives\shared\loadingoverlay.js" />
     <Content Include="Scripts\app\directives\shared\modal.js" />
     <Content Include="Scripts\app\directives\shared\select2dropdown.js" />
@@ -157,6 +159,7 @@
     <Content Include="Scripts\app\views\jobs\Add.html" />
     <Content Include="Scripts\app\views\jobs\Details.html" />
     <Content Include="Scripts\app\views\jobs\Edit.html" />
+    <Content Include="Scripts\app\views\jobs\jobAttachments.html" />
     <Content Include="Scripts\app\views\jobs\List.html" />
     <Content Include="Scripts\app\views\shared\Error.html" />
     <Content Include="Scripts\config.js" />

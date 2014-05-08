@@ -27,23 +27,8 @@
         </div>        
     </div>
     <br />
+    <job-Attachment-List attachments="attachments" />
     <div>
-        <select ui-select2 style="width:100%;" id='userId' ng-required="true" data-placeholder="J" data-ng-model="jobAttachments">
-            <option value="">--Select--</option>
-            <option ng-repeat="p in jobAttachments" value="{{p.Id}}">{{p.FriendlyName}}</option>
-        </select>            
-    </div>
-        <table class="ui table segment">
-            <thead>
-                <tr><th>Name</th>
-                </tr></thead>
-            <tbody ng-repeat="p in jobAttachments">
-                <tr>
-                    <td>{{p.Id}}</td>
-                </tr>
-            </tbody>
-        </table>
-            <div>
         <a class="ui blue mini button" href="/Jobs/">Back</a>
     </div>
     </div>

@@ -1,0 +1,16 @@
+﻿<div class="ui small feed segment" ng-controller="JobAttachmentCtrl">
+    <div class="ui small header">Attachments</div>
+    <div data-ng-repeat="attachment in jobAttachments" class="event">
+        <div class="content" style="width:95%;">
+            You had an attachment<a style="color:#00BAFF; text-decoration:none;">
+                {{attachment.FileName}}
+            </a> against this Job on <b>{{attachment.FileName}}</b>
+            <div class="summary"></div>
+        </div>
+    </div>
+    <div data-ng-show="activities.length == 0" class="event">
+        <div class="content ui warning message">
+            You don't have any attachment against this job
+        </div>
+    </div>
+</div>
