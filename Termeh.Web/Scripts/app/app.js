@@ -10,6 +10,7 @@ app.config(['$routeProvider', '$locationProvider', '$httpProvider', '$provide',
     $routeProvider
         .when('/Login', { templateUrl: '/Scripts/app/views/login/Login.html' })
         .when('/About', { templateUrl: '/Scripts/app/views/about/About.html' })
+        .when('/JobAttachments/Add', { templateUrl: '/Scripts/app/views/jobAttachments/add.html', controller: 'JobAttachmentAddCtrl' })
         .when('/Jobs', { templateUrl: '/Scripts/app/views/jobs/List.html', controller: 'JobsCtrl' })
         .when('/Jobs/Add', { templateUrl: '/Scripts/app/views/jobs/Add.html', controller: 'JobCtrl' })
         .when('/Jobs/Edit/:jobId', { templateUrl: '/Scripts/app/views/jobs/Edit.html', controller: 'JobEditCtrl', disableCache: true })

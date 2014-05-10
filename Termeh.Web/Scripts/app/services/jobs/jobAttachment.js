@@ -9,7 +9,7 @@
             return jobAttachService.delete({ jobId: jobId }).$promise;
         },
         addJobAttachment: function (jobAttachment) {
-            return jobAttachService.save(jobAttachment).$promise;
+            return jobAttachService.save({ jobAttachmentId: jobAttachment.Id }, jobAttachment).$promise;
         },
         getJobAttachment: function (attachmentId) {
             return jobAttachService.get({ jobAttachmentId: attachmentId });
