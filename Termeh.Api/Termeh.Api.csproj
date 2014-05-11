@@ -183,6 +183,7 @@
     <Compile Include="Controllers\JobStatusController.cs" />
     <Compile Include="Controllers\JobTrackBaseController.cs" />
     <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Data\Commands\AddAttachmentJobHandler.cs" />
     <Compile Include="Data\Commands\AddJobAttachmentCommand.cs" />
     <Compile Include="Data\Commands\AddJobAttachmentHandler.cs" />
     <Compile Include="Data\Commands\AddJobCommand.cs" />
