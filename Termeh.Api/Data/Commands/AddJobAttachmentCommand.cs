@@ -9,4 +9,8 @@ namespace JobTrack.Api.Data.Commands
         public string FriendlyName { get; set; }
         public int JobId { get; set; }
     }
+    public class DeleteJobAttachmentCommand : ICommand
+    {
+        public int Id { get; set; }
+    }
 }

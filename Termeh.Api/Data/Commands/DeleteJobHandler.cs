@@ -1,9 +1,6 @@
-using System;
 using System.Data.Entity;
 using System.Linq;
 using JobTrack.Api.Data.Models;
-using JobTrack.Api.Data.Queries;
-using JobTrack.Api.Data.Queries.Job;
 using ShortBus;
 
 namespace JobTrack.Api.Data.Commands

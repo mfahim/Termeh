@@ -183,10 +183,10 @@
     <Compile Include="Controllers\JobStatusController.cs" />
     <Compile Include="Controllers\JobTrackBaseController.cs" />
     <Compile Include="Controllers\UserController.cs" />
-    <Compile Include="Data\Commands\AddAttachmentJobHandler.cs" />
     <Compile Include="Data\Commands\AddJobAttachmentCommand.cs" />
     <Compile Include="Data\Commands\AddJobAttachmentHandler.cs" />
     <Compile Include="Data\Commands\AddJobCommand.cs" />
+    <Compile Include="Data\Commands\DeleteJobAttachmentHandler.cs" />
     <Compile Include="Data\Context\IdentityUserConfiguration.cs" />
     <Compile Include="Data\Context\IdentityUserLoginConfiguration.cs" />
     <Compile Include="Data\Context\IdentityUserRoleConfiguration.cs" />

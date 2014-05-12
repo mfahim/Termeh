@@ -31,5 +31,15 @@ namespace JobTrack.Api.Controllers
             return Created(Url.Link("DefaultApi", new { controller = "Job" }), jobAttachViewModel);
         }
 
+        [HttpDelete]
+        public IHttpActionResult DeleteAttachment(int attachmentId)
+        {
+            var response = Mediator.Send(new DeleteJobAttachmentCommand() { Id = attachmentId });
+
+            if (response.HasException())
+                return InternalServerError(response.Exception);
+            return Ok();
+        }
+
     }
 }
