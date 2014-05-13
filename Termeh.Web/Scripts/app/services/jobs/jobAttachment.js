@@ -5,8 +5,8 @@
         getAttachmentsForAJob: function (jobId) {
             return jobAttachService.query({ jobId: jobId });
         },
-        deleteJobAttachment: function (jobId) {
-            return jobAttachService.delete({ jobId: jobId }).$promise;
+        deleteJobAttachment: function (attachmentId) {
+            return jobAttachService.delete({ attachmentId: attachmentId }).$promise;
         },
         addJobAttachment: function (jobAttachment) {
             return jobAttachService.save({ jobAttachmentId: jobAttachment.Id }, jobAttachment).$promise;

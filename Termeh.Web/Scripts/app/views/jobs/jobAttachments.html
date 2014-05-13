@@ -3,6 +3,7 @@
     <div data-ng-repeat="attachment in jobAttachments" class="event">
         <div class="content" style="width:95%;">
             You had an attachment {{attachment.FriendlyName}} <b>{{attachment.FileName}}</b>
+            <a href="javascript:;" data-ng-click="deleteJobAttachment(attachment.Id)"><i class="trash icon"></i></a>
         </div>
     </div>
     <div data-ng-show="jobAttachments.length == 0" class="event">

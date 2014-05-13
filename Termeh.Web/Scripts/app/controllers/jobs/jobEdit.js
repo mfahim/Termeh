@@ -3,8 +3,8 @@
 
         init();
 
-        $scope.editJob = function (resource) {
-            jobSvc.editJob(resource).then(function (data) {
+        $scope.editJob = function (job) {
+            jobSvc.editJob(job).then(function (data) {
                 $location.url('/Jobs');
             });
         };
