@@ -16,8 +16,8 @@ namespace JobTrack.Api.Data.Commands
 
         public void Handle(DeleteJobAttachmentCommand message)
         {
-            var jb = _context.Set<Attachment>().Single(p => p.Id == message.Id);
-            _context.Set<Attachment>().Remove(jb);
+            var jb = _context.Set<JobAttachment>().Single(p => p.Id == message.Id);
+            _context.Set<JobAttachment>().Remove(jb);
 
             _context.SaveChanges();
         }

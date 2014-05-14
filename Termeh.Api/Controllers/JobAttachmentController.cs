@@ -21,7 +21,6 @@ namespace JobTrack.Api.Controllers
         [HttpPost]
         public IHttpActionResult Post(AddJobAttachmentCommand jobAttachViewModel)
         {
-            jobAttachViewModel.FileName = jobAttachViewModel.FriendlyName;
             var response = Mediator.Send(jobAttachViewModel);
 
             if (response.HasException())

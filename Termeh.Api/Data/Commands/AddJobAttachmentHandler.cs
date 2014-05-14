@@ -15,7 +15,7 @@ namespace JobTrack.Api.Data.Commands
 
         public void Handle(AddJobAttachmentCommand message)
         {
-            _context.Set<Attachment>().Add(new Attachment()
+            _context.Set<JobAttachment>().Add(new JobAttachment()
                 {
                     FileName = message.FileName,
                     FriendlyName = message.FriendlyName,
