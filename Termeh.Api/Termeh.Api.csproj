@@ -190,7 +190,7 @@
     <Compile Include="Data\Context\IdentityUserConfiguration.cs" />
     <Compile Include="Data\Context\IdentityUserLoginConfiguration.cs" />
     <Compile Include="Data\Context\IdentityUserRoleConfiguration.cs" />
-    <Compile Include="Data\Models\Attachment.cs" />
+    <Compile Include="Data\Models\JobAttachment.cs" />
     <Compile Include="Data\Models\ApplicationUser.cs" />
     <Compile Include="Data\Models\Job.cs" />
     <Compile Include="Data\Models\JobStatus.cs" />
@@ -200,6 +200,7 @@
     <Compile Include="Data\Commands\AddJobHandler.cs" />
     <Compile Include="Data\Commands\DeleteJobHandler.cs" />
     <Compile Include="Data\Commands\EditJobHandler.cs" />
+    <Compile Include="Data\Queries\JobStatus\ShowJobStatusesHandler.cs" />
     <Compile Include="Data\Queries\Job\IndexJobQuery.cs" />
     <Compile Include="Data\Queries\Job\IndexJobsHandler.cs" />
     <Compile Include="Data\Queries\Helpers\LogCommand.cs" />
@@ -208,6 +209,7 @@
     <Compile Include="Data\Queries\Job\ShowJobAttachmentsQuery.cs" />
     <Compile Include="Data\Queries\Job\ShowJobsHandler.cs" />
     <Compile Include="Data\Queries\JobStatus\ShowJobStatusesQuery.cs" />
+    <Compile Include="Data\Queries\Job\ShowJobsQuery.cs" />
     <Compile Include="Data\Queries\User\ShowUsersHandler.cs" />
     <Compile Include="Data\Queries\User\ShowUsersQuery.cs" />
     <Compile Include="DependencyResolution\IocDependencyResolver.cs" />
@@ -218,7 +220,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Job\AttachmentView.cs" />
+    <Compile Include="Models\Job\JobAttachmentView.cs" />
     <Compile Include="Models\Job\JobStatus.cs" />
     <Compile Include="Models\Job\JobStatusView.cs" />
     <Compile Include="Models\Job\JobView.cs" />

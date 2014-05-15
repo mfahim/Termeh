@@ -4,8 +4,7 @@ using ShortBus;
 
 namespace JobTrack.Api.Data.Queries.Job
 {
-    public class ShowJobAttachmentsQuery : IQuery<IList<JobAttachmentView>>
+    public class ShowJobsQuery : IQuery<IList<JobView>>
     {
-        public int JobId { get; set; }
     }
 }

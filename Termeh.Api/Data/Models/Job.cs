@@ -18,6 +18,6 @@ namespace JobTrack.Api.Data.Models
         public virtual ApplicationUser ApplicationUser { get; set; }
         public virtual int UserId { get; set; }
         public virtual int JobStatusId { get; set; }
-        public virtual IList<Attachment> Attachments { get; set; }
+        public virtual IList<JobAttachment> Attachments { get; set; }
     }
 }

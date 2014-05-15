@@ -6,6 +6,12 @@
         Add Job Attachment
     </h5><div class="ui divider"></div>
     <div class="field">
+        <label for="FileName">
+            File Name<span style="color: Red">*</span>
+        </label>
+        <input type="text" id="FileName" placeholder="File Name" required data-ng-model="jobAttachment.FileName" />
+    </div>
+    <div class="field">
         <label for="FriendlyName">
             Friendly Name<span style="color: Red">*</span>
         </label>

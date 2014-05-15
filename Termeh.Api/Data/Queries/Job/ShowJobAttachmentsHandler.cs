@@ -7,7 +7,7 @@ using ShortBus;
 
 namespace JobTrack.Api.Data.Queries.Job
 {
-    public class ShowJobAttachmentsHandler : IQueryHandler<ShowJobAttachmentsQuery, IList<AttachmentView>>
+    public class ShowJobAttachmentsHandler : IQueryHandler<ShowJobAttachmentsQuery, IList<JobAttachmentView>>
     {
         private readonly DbContext _context;
 
@@ -16,10 +16,10 @@ namespace JobTrack.Api.Data.Queries.Job
             _context = context;
         }
 
-        public IList<AttachmentView> Handle(ShowJobAttachmentsQuery query)
+        public IList<JobAttachmentView> Handle(ShowJobAttachmentsQuery query)
         {
-            var jb = _context.Set<Models.Attachment>().Where(j => j.JobId == query.JobId);
-            return Mapper.Map<IList<AttachmentView>>(jb);
+            var jb = _context.Set<Models.JobAttachment>().Where(j => j.JobId == query.JobId);
+            return Mapper.Map<IList<JobAttachmentView>>(jb);
         }
     }
 }

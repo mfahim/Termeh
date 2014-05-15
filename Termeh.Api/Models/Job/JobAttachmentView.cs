@@ -1,6 +1,6 @@
 namespace JobTrack.Api.Models.Job
 {
-    public class AttachmentView
+    public class JobAttachmentView
     {
         public int Id { get; set; }
         public string FileName { get; set; }

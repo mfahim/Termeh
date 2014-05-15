@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using JobTrack.Api.Models.Job;
+﻿using JobTrack.Api.Models.Job;
 using ShortBus;
 
 namespace JobTrack.Api.Data.Queries.Job
@@ -9,9 +8,5 @@ namespace JobTrack.Api.Data.Queries.Job
         public int Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
-    }
-
-    public class ShowJobsQuery : IQuery<IList<JobView>>
-    {
     }
 }
