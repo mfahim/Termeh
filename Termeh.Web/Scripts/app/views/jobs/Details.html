@@ -4,34 +4,19 @@
     <h5 class="ui header">Job Details</h5>
     <div class="ui divider"></div>
     <div class="container">
-    <div class="row">
-        <div class="col-xs-12">
-            <span class="col-xs-6">Job Number : </span>
-            <span class="col-xs-6 col-sm-3 col-md-3">{{job.JobNumber}}</span>
-        </div>
-        <div class="col-xs-6">
-            <span class="col-xs-12 col-sm-6 col-md-6">Name : </span>
-            <span class="col-xs-6 col-sm-6 col-md-6">{{job.Name}}</span>
-        </div>
-        <div class="row">
-            <span class="col-xs-12 col-sm-6 col-md-6">Description: </span>
-            <span class="col-xs-6 col-sm-6 col-md-6">{{job.Description}}</span>
-        </div>
-        <div class="row">
-            <span class="col-xs-12 col-sm-6 col-md-6">Quantity: </span>
-            <span class="col-xs-6 col-sm-6 col-md-6">{{job.Quantity}}</span>
-        </div>
-        <div class="row">
-            <span class="col-xs-12 col-sm-6 col-md-6">Due Date: </span>
-            <span class="col-xs-6 col-sm-6 col-md-6">{{job.DueDate | date:'dd/MM/yyyy'}}</span>
-        </div>        
+        <div class="ui ribbon label green">Job Number : {{job.JobNumber}}</div>
+        <div class="ui top attached segment">Job Name : {{job.Name}}</div>
+        <div class="ui attached segment">Description : {{job.Description}}</div>
+        <div class="ui attached segment">Quantity : {{job.Quantity}}</div>
+        <div class="ui bottom attached segment">Due Date: {{job.DueDate | date:'dd/MM/yyyy'}}</div>
     </div>
     <br />
-    <div>
-        <a class="ui blue mini button" href="/Jobs/">Back</a>
-        <a class="ui blue mini button" href="/JobAttachments/Add/{{job.Id}}">Add Attachment</a>
-    </div>
+    <div class="ui buttons">
+      <div class="ui button"><a href="/Jobs/">Back</a></div>
+      <div class="or"></div>
+      <div class="ui positive button"><a href="/JobAttachments/Add/{{job.Id}}">Add Attachment</a></div>
+    </div>    
+    <div>        
     <br />
     <job-Attachment-List attachments="attachments" />
-    </div>
 </div>
