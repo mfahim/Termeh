@@ -1,8 +1,5 @@
-﻿<h5 class="ui header">Add Job</h5>
-<div class="ui divider"></div>
-
-<form name="jobform" role="form" class="ui secondary small form segment">
-    <h5 class="ui header">Add Job</h5>
+﻿<form name="jobform" role="form" class="ui form segment">
+    <div class="ui header"><i class="add icon"></i> Create New Jobs</div>
     <div class="ui divider"></div>
     <div class="field">
         <label for="jobNumber">Job Number</label>
@@ -34,9 +31,9 @@
     </div>
     <div class="ui divider"></div>
     <div class="inline field">
-        <button data-ng-disabled="jobform.$invalid" data-ng-click="addJob(job)" class="ui blue mini button">
+        <button data-ng-disabled="jobform.$invalid" data-ng-click="addJob(job)" class="ui primary mini button">
             Submit
         </button>
-        <a class="ui black mini button" href="/Jobs">Cancel</a>
+        <a class="ui secondary mini button" href="/Jobs">Cancel</a>
     </div>
 </form>

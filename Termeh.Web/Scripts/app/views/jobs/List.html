@@ -1,11 +1,10 @@
 ﻿<cst-Top-Menu></cst-Top-Menu>
 <cst-Loading-Overlay></cst-Loading-Overlay>
-<div class="row">
-    <h5 class="ui header">Jobs List</h5>
-    <br/><br/>
+<div class="ui message">
+    <div class="ui header">Jobs List</div>
 </div>
 <div>
-    <table class="ui table segment">
+    <table class="ui five column table segment">
         <thead>
             <tr>
                 <th>Job Number</th>
@@ -36,16 +35,17 @@
                     {{job.AssignedTo}}
                 </td>
                 <td style="width: 10%;">
-                    <a href="/Jobs/Edit/{{job.Id}}"><i class="edit icon"></i></a>
-                    <a href="javascript:;" data-ng-click="deleteJob(job.Id)"><i class="trash icon"></i></a>
+                    
+                    <a href="/Jobs/Edit/{{job.Id}}"><i class="square edit teal icon"></i></a>
+                    <a href="javascript:;" data-ng-click="deleteJob(job.Id)"><i class="square red trash icon"></i></a>
                 </td>
             </tr>
         </tbody>
         <tfoot>
             <tr>
                 <th colspan="5">
-                    <div class="ui green labeled icon button small">
-                        <i class="add icon"></i> <a href="/Jobs/Add">New Job</a>                        
+                    <div class="ui primary button small">
+                        <a href="/Jobs/Add">New Job</a>                        
                     </div>                
                 </th>
             </tr>
