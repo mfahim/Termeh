@@ -1,7 +1,5 @@
-﻿<h5 class="ui header">Edit Job</h5>
-<div class="ui divider"></div>
-<form name="jobform" role="form" class="ui {loading} secondary small form segment" ng-cloak>
-    <h5 class="ui header">Edit Job</h5>
+﻿<form name="jobform" role="form" class="ui {loading} ui form segment" ng-cloak>
+    <div class="ui header"><i class="edit icon"></i> Edit Job</div>
     <div class="ui divider"></div>
     <div class="field">
         <label for="jobNumber">Job Number</label>
@@ -32,9 +30,9 @@
         </select>
     </div>
     <div class="inline field">
-        <button data-ng-click="editJob(job)" data-ng-disabled="jobform.$invalid" class="ui blue mini button">
+        <button data-ng-click="editJob(job)" data-ng-disabled="jobform.$invalid" class="ui primary mini button">
             Submit
         </button>
-        <a class="ui black mini button" href="/Jobs">Cancel</a>
+        <a class="ui secondary mini button" href="/Jobs">Cancel</a>
     </div>
 </form>

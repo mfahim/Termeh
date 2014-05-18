@@ -1,10 +1,6 @@
-﻿<h5 class="ui header">Add Job Attachment</h5>
-<div class="ui divider"></div>
-
-<form name="activityform" role="form" class="ui secondary small form segment">
-    <h5 class="ui header">
-        Add Job Attachment
-    </h5><div class="ui divider"></div>
+﻿<form name="activityform" role="form" class="ui form segment">
+    <div class="ui header"><i class="add icon"></i> Add Job Attachment</div>
+    <div class="ui divider"></div>
     <div class="field">
         <label for="FileName">
             File Name<span style="color: Red">*</span>
@@ -18,11 +14,11 @@
         <input type="text" id="FriendlyName" placeholder="Friendly Name" required data-ng-model="jobAttachment.FriendlyName" />
     </div>
     <div class="ui divider"></div>
-    <div class="inline-field">
+    <div class="inline field">
         <button data-ng-disabled="activityform.$invalid" data-ng-click="addAttachment(jobAttachment)"
-                class="ui blue mini button">
+                class="ui primary mini button">
             Submit
         </button>
-        <a class="ui black mini button" href="/Jobs/job/{{jobAttachment.jobId}}">Cancel</a>
+        <a class="ui secondary mini button" href="/Jobs/job/{{jobAttachment.jobId}}">Cancel</a>
     </div>
 </form>

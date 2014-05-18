@@ -1,10 +1,7 @@
 ﻿<cst-Top-Menu></cst-Top-Menu>
-<div class="ui medium segment">
-    
-    <h5 class="ui header">Job Details</h5>
-    <div class="ui divider"></div>
+<div class="ui small segment">    
     <div class="container">
-        <div class="ui ribbon label green">Job Number : {{job.JobNumber}}</div>
+        <div class="ui ribbon label red">Job Details - Job Number : {{job.JobNumber}}</div>
         <div class="ui top attached segment">Job Name : {{job.Name}}</div>
         <div class="ui attached segment">Description : {{job.Description}}</div>
         <div class="ui attached segment">Quantity : {{job.Quantity}}</div>
@@ -16,7 +13,6 @@
       <div class="or"></div>
       <div class="ui positive button"><a href="/JobAttachments/Add/{{job.Id}}">Add Attachment</a></div>
     </div>    
-    <div>        
-    <br />
+    <br /><br/>
     <job-Attachment-List attachments="attachments" />
 </div>

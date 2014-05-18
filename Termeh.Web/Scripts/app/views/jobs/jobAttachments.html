@@ -1,14 +1,20 @@
 ﻿<div class="ui small feed segment" data-ng-controller="JobAttachmentCtrl">
-    <div class="ui small header">Attachments List</div>
+    <div class="ui teal ribbon small label">Attachments </div>
     <div data-ng-repeat="attachment in jobAttachments" class="event">
-        <div class="content" style="width:95%;">
-            You had an attachment {{attachment.FriendlyName}} <b>{{attachment.FileName}}</b>
-            <a href="javascript:;" data-ng-click="deleteJobAttachment(attachment.Id)"><i class="trash icon"></i></a>
+        <div class="label">
+            <a href="javascript:;" data-ng-click="deleteJobAttachment(attachment.Id)"><i class="circular red trash icon"></i></a>
+        </div>
+        <div class="content">
+            <div class="summary">
+                You had an attachment {{attachment.FriendlyName}} <b>{{attachment.FileName}}</b>
+            </div>
         </div>
     </div>
     <div data-ng-show="jobAttachments.length == 0" class="event">
-        <div class="content ui warning message">
-            You don't have any attachment against this job
+        <div class="ui small warning message">
+            <div class="header">
+                You don't have any attachment against this job        
+            </div>
         </div>
     </div>
 </div>
