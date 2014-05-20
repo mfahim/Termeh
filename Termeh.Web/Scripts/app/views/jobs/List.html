@@ -4,37 +4,33 @@
     <div class="ui header">Jobs List</div>
 </div>
 <div>
-    <table class="ui five column table segment">
+    <table class="ui six column table segment">
         <thead>
             <tr>
                 <th>Job Number</th>
                 <th>Name</th>
                 <th>Quantity</th>
                 <th>Rep Name</th>
+                <th>Attachments</th>
                 <th>Actions</th>
             </tr>
         </thead>
         <tbody>
             <tr></tr>
             <tr>
-                <td class="danger" colspan="4" data-ng-show="jobs.length == 0">
+                <td class="danger" colspan="6" data-ng-show="jobs.length == 0">
                     There are no jobs
                 </td>
             </tr>
-            <tr data-ng-repeat="job in jobs">
+            <tr data-ng-repeat="job in jobs" data-ng-class="{'warning': job.AttchmentCount > 0}">
                 <td>
                     <a href="/Jobs/{{job.Id}}">{{job.JobNumber}}</a>
                 </td>
+                <td>{{job.Name}}</td>
+                <td>{{job.Quantity}}</td>
+                <td>{{job.AssignedTo}}</td>
+                <td>{{job.AttchmentCount}}</td>
                 <td>
-                    {{job.Name}}
-                </td>
-                <td>
-                    {{job.Quantity}}
-                </td>
-                <td>
-                    {{job.AssignedTo}}
-                </td>
-                <td style="width: 10%;">
                     
                     <a href="/Jobs/Edit/{{job.Id}}"><i class="square edit teal icon"></i></a>
                     <a href="javascript:;" data-ng-click="deleteJob(job.Id)"><i class="square red trash icon"></i></a>
@@ -43,7 +39,7 @@
         </tbody>
         <tfoot>
             <tr>
-                <th colspan="5">
+                <th colspan="6">
                     <div class="ui primary button small">
                         <a href="/Jobs/Add">New Job</a>                        
                     </div>                
