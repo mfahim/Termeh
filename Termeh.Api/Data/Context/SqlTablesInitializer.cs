@@ -5,7 +5,7 @@ using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace JobTrack.Api.Data.Context
 {
-    public class SqlTablesInitializer : DropCreateDatabaseAlways<JobTrackDbContext>
+    public class SqlTablesInitializer : System.Data.Entity.DropCreateDatabaseAlways<JobTrackDbContext>
     {
         protected override void Seed(JobTrackDbContext context)
         {

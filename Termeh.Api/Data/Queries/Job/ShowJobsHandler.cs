@@ -18,7 +18,9 @@ namespace JobTrack.Api.Data.Queries.Job
 
         public IList<JobView> Handle(ShowJobsQuery query)
         {
-            var jobs = _context.Set<Models.Job>().Include(a => a.JobStatus).Include(a => a.ApplicationUser);
+            var jobs = _context.Set<Models.Job>()
+                .Include(a => a.JobStatus)
+                .Include(a => a.AssignedToUser);
             return Mapper.Map<IList<JobView>>(jobs.ToList());
         }
     }

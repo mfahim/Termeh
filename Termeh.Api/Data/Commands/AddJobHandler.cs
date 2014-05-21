@@ -25,8 +25,9 @@ namespace JobTrack.Api.Data.Commands
                     Quantity = message.Quantity,
                     Description = message.Description,
                     JobStatusId = 1,
-                    UserId = message.UserId,
-                    CreatedBy = 1
+                    AssignedToUserId = message.UserId,
+                    // todo: coming from auth services
+                    CreatedById = 1
                 });
 
             _context.SaveChanges();

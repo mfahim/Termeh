@@ -17,7 +17,9 @@ namespace JobTrack.Api.Data.Queries.Job
 
         public JobView Handle(IndexJobQuery query)
         {
-            var jb = _context.Set<Models.Job>().Include(a => a.JobStatus).SingleOrDefault(j => j.Id == query.Id);
+            var jb = _context.Set<Models.Job>()
+                .Include(a => a.JobStatus)
+                .SingleOrDefault(j => j.Id == query.Id);
             return Mapper.Map<JobView>(jb);
         }
     }

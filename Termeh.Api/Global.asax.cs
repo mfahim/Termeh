@@ -20,12 +20,12 @@ namespace JobTrack.Api
             GlobalConfiguration.Configuration.Formatters.Clear();
             GlobalConfiguration.Configuration.Formatters.Add(new JsonMediaTypeFormatter());
 
-            //Database.SetInitializer(new SqlTablesInitializer());
-
             WebApiConfig.Register(GlobalConfiguration.Configuration);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             ApplicationConverterBootStrapper.Start();
+
+            //Database.SetInitializer(new SqlTablesInitializer());
         }
     }
 }
