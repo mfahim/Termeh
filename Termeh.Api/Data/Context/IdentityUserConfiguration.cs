@@ -8,7 +8,7 @@ namespace JobTrack.Api.Data.Context
         public IdentityUserConfiguration()
         {
             HasKey(user => new { user.Id });
-            //HasRequired(login => login.UserId).WithMany().HasForeignKey(login => login.UserId);
+            //HasRequired(login => login.).WithMany().HasForeignKey(login => login.UserId);
         }
     }
 }

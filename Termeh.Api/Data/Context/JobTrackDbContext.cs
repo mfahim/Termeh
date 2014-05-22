@@ -31,6 +31,8 @@ namespace JobTrack.Api.Data.Context
             modelBuilder.Configurations.Add(new IdentityUserConfiguration());
             modelBuilder.Configurations.Add(new IdentityUserRoleConfiguration());
             modelBuilder.Configurations.Add(new IdentityUserLoginConfiguration());
+            modelBuilder.Configurations.Add(new JobConfiguration());
+
         }
 
         public int Commit()

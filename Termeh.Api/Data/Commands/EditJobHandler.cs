@@ -28,7 +28,7 @@ namespace JobTrack.Api.Data.Commands
             jb.Description = message.Description;
             jb.Quantity = message.Quantity;
             jb.Name = message.Name;
-            jb.AssignedToUserId = message.UserId;
+            jb.AssignedToUserId = "1";
             _context.SaveChanges();
 
             _logger.Handle(new LogCommand("Successfully updated"));
