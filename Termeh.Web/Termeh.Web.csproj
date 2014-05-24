@@ -172,6 +172,7 @@
     <Content Include="Scripts\libs\angular-resource-1.2.9.min.js" />
     <Content Include="Scripts\libs\angular-route-1.2.9.min.js" />
     <Content Include="Scripts\libs\angular-ui\select2.js" />
+    <Content Include="Scripts\libs\angular-ui\ui-bootstrap-tpls-0.11.0.min.js" />
     <Content Include="Scripts\libs\jquery-1.9.1.js" />
     <Content Include="Scripts\libs\jquery-ui-1.10.3.min.js" />
     <Content Include="Scripts\libs\select2\select2.js" />

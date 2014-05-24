@@ -4,7 +4,8 @@
     <div class="ui header">Jobs List</div>
 </div>
 <div>
-    <table class="ui six column table segment">
+    <input type="text" ng-model="selected" typeahead="suggestion for suggestion in jobs($viewValue)">
+        <table class="ui six column table segment">
         <thead>
             <tr>
                 <th>Job Number</th>
