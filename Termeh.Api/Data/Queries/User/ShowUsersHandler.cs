@@ -17,7 +17,7 @@ namespace JobTrack.Api.Data.Queries.User
 
         public IList<UserView> Handle(ShowUsersQuery query)
         {
-            var users = _context.Set<Models.ApplicationUser>().ToList();
+            var users = _context.Set<Models.TermehUser>().ToList();
             return AutoMapper.Mapper.Map<IList<UserView>>(users);
         }
     }

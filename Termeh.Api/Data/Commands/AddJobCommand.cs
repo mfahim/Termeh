@@ -12,7 +12,7 @@ namespace JobTrack.Api.Data.Commands
         public int CreatedById { get; set; }
         public DateTime DueDate { get; set; }
         public decimal Quantity { get; set; }
-        public int UserId { get; set; }
+        public string Username { get; set; }
     }
 
     public class EditJobCommand : ICommand
@@ -25,7 +25,7 @@ namespace JobTrack.Api.Data.Commands
         public int CreatedById { get; set; }
         public DateTime DueDate { get; set; }
         public decimal Quantity { get; set; }
-        public int UserId { get; set; }
+        public int Username { get; set; }
     }
 
     public class DeleteJobCommand : ICommand

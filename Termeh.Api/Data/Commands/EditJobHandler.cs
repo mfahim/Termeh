@@ -21,6 +21,8 @@ namespace JobTrack.Api.Data.Commands
 
         public void Handle(EditJobCommand message)
         {
+            var usrname = _context.Set<TermehUser>().SingleOrDefaultAsync(usr => usr.Id == message.Username).Result.Id;
+
             var jb = _context.Set<Job>().Single(p => p.Id == message.Id);
             jb.JobNumber = message.JobNumber;
             jb.DueDate = message.DueDate;
@@ -28,7 +30,7 @@ namespace JobTrack.Api.Data.Commands
             jb.Description = message.Description;
             jb.Quantity = message.Quantity;
             jb.Name = message.Name;
-            jb.AssignedToUserId = "1";
+            jb.AssignedToUserKey = usrname;
             _context.SaveChanges();
 
             _logger.Handle(new LogCommand("Successfully updated"));

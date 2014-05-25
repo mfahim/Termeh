@@ -14,10 +14,10 @@ namespace JobTrack.Api.Data.Models
         public Nullable<decimal> Quantity { get; set; }
 
         public virtual JobStatus JobStatus { get; set; }
-        public virtual ApplicationUser AssignedToUser { get; set; }
-        public virtual ApplicationUser CreatedBy { get; set; }
-        public virtual string CreatedById { get; set; }
-        public virtual string AssignedToUserId { get; set; }
+        public virtual TermehUser AssignedToUser { get; set; }
+        public virtual TermehUser CreatedBy { get; set; }
+        public virtual int CreatedByUserKey { get; set; }
+        public virtual int AssignedToUserKey { get; set; }
         public virtual int JobStatusId { get; set; }
         public virtual IList<JobAttachment> Attachments { get; set; }
     }

@@ -1,14 +1,15 @@
 using System.Data.Entity.ModelConfiguration;
-using Microsoft.AspNet.Identity.EntityFramework;
+using JobTrack.Api.Data.Models;
 
 namespace JobTrack.Api.Data.Context
 {
-    public class IdentityUserLoginConfiguration : EntityTypeConfiguration<IdentityUserLogin>
+    public class IdentityUserLoginConfiguration : EntityTypeConfiguration<GuidUserLogin>
     {
         public IdentityUserLoginConfiguration()
         {
+            ToTable("UserLogins", "User");
             HasKey(login => new { login.UserId, login.LoginProvider, login.ProviderKey });
-            //HasRequired(login => login.UserId).WithMany().HasForeignKey(login => login.UserId);
+            Property(l => l.UserId).HasColumnType("int");
         }
     }
 }

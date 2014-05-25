@@ -16,6 +16,7 @@ namespace JobTrack.Api.Data.Commands
 
         public void Handle(AddJobCommand message)
         {
+            var username = _context.Set<TermehUser>().FirstAsync().Result.Id;
             _context.Set<Job>().Add(new Job()
                 {
                     CreatedDate = DateTime.Now,
@@ -25,9 +26,9 @@ namespace JobTrack.Api.Data.Commands
                     Quantity = message.Quantity,
                     Description = message.Description,
                     JobStatusId = 1,
-                    AssignedToUserId = "1",
+                    AssignedToUserKey = username,
                     // todo: coming from auth services
-                    CreatedById = "1"
+                    CreatedByUserKey = username
                 });
 
             _context.SaveChanges();

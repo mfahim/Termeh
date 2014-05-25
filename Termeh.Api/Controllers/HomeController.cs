@@ -1,5 +1,4 @@
 ﻿using System.Web.Mvc;
-using JobTrack.Api.Data.Context;
 
 namespace JobTrack.Api.Controllers
 {
@@ -7,8 +6,6 @@ namespace JobTrack.Api.Controllers
     {
         public ActionResult Index()
         {
-            //var sqlInitial = new SqlTablesInitializer();
-            //sqlInitial.InitializeDatabase(new JobTrackDbContext("JobTrackDbContext"));
             return View();
         }
     }

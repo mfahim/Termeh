@@ -5,7 +5,7 @@ using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace JobTrack.Api.Data.Context
 {
-    public class SqlTablesInitializer : System.Data.Entity.DropCreateDatabaseAlways<JobTrackDbContext>
+    public class SqlTablesInitializer : DropCreateDatabaseAlways<JobTrackDbContext>
     {
         protected override void Seed(JobTrackDbContext context)
         {
@@ -17,8 +17,8 @@ namespace JobTrack.Api.Data.Context
 
         private static void InitApplicationUsers(JobTrackDbContext context)
         {
-            var userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
-            userManager.UserValidator = new UserValidator<ApplicationUser>(userManager)
+            var userManager = new UserManager<TermehUser, int>(new GuidUserStore(context));
+            userManager.UserValidator = new UserValidator<TermehUser, int>(userManager)
             {
                 AllowOnlyAlphanumericUserNames = false
             };
@@ -34,11 +34,8 @@ namespace JobTrack.Api.Data.Context
                 roleManager.Create(new IdentityRole("Member"));
             }
 
-            var user = new ApplicationUser();
-            user.FirstName = "Admin";
-            user.LastName = "Last Name";
-            user.Email = "admin@hotmail.com";
-            user.UserName = "admin@hotmail.com";
+            var user = new TermehUser(1)
+                {FirstName = "Admin", LastName = "Termeh", Email = "admin@hotmail.com"};
 
             var userResult = userManager.Create(user, "Termeh");
 
