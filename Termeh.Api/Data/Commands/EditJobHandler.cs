@@ -2,7 +2,6 @@ using System;
 using System.Data.Entity;
 using System.Linq;
 using JobTrack.Api.Data.Models;
-using JobTrack.Api.Data.Queries;
 using JobTrack.Api.Data.Queries.Helpers;
 using ShortBus;
 
@@ -21,7 +20,7 @@ namespace JobTrack.Api.Data.Commands
 
         public void Handle(EditJobCommand message)
         {
-            var usrname = _context.Set<TermehUser>().SingleOrDefaultAsync(usr => usr.Id == message.Username).Result.Id;
+            var userId = _context.Set<TermehUser>().SingleOrDefaultAsync(usr => usr.Id == message.Username).Result.Id;
 
             var jb = _context.Set<Job>().Single(p => p.Id == message.Id);
             jb.JobNumber = message.JobNumber;
@@ -30,7 +29,7 @@ namespace JobTrack.Api.Data.Commands
             jb.Description = message.Description;
             jb.Quantity = message.Quantity;
             jb.Name = message.Name;
-            jb.AssignedToUserKey = usrname;
+            jb.AssignedToUserId = userId;
             _context.SaveChanges();
 
             _logger.Handle(new LogCommand("Successfully updated"));

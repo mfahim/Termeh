@@ -4,32 +4,25 @@ using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace JobTrack.Api.Data.Models
 {
-    public class GuidRole : IdentityRole<int, GuidUserRole>
+    public class TermehRole : IdentityRole<int, TermehUserRole>
     {
-        public GuidRole()
-        {
-            Id = 0;
-        }
-        public GuidRole(string name) : this() { Name = name; }
+        public TermehRole()
+        {}
+        public TermehRole(string name) : this() { Name = name; }
     }
-    public class GuidUserRole : IdentityUserRole<int> { }
-    public class GuidUserClaim : IdentityUserClaim<int> { }
+    public class TermehUserRole : IdentityUserRole<int> { }
+    public class TermehUserClaim : IdentityUserClaim<int> { }
 
-    public class GuidUserLogin : IdentityUserLogin<int>
+    public class TermehUserLogin : IdentityUserLogin<int>
     {
 
     }
 
-    public class TermehUser : IdentityUser<int, GuidUserLogin, GuidUserRole, GuidUserClaim>
+    public class TermehUser : IdentityUser<int, TermehUserLogin, TermehUserRole, TermehUserClaim>
     {
-        public TermehUser(int userId)
-        {
-            Id = userId;
-            Jobs = new HashSet<Job>();
-        }
-
         public string FirstName { get; set; }
         public string LastName { get; set; }
+
 
         public virtual ICollection<Job> Jobs { get; set; }
     }

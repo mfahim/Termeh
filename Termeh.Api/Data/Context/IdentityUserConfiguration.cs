@@ -8,23 +8,24 @@ namespace JobTrack.Api.Data.Context
         public IdentityUserConfiguration()
         {
             HasKey(user => user.Id);
+            HasMany(usr => usr.Jobs).WithRequired().WillCascadeOnDelete(false);
             ToTable("TermehUsers", "User");
         }
     }
-    public class IdentityUser1Configuration : EntityTypeConfiguration<GuidRole>
+    public class IdentityUser1Configuration : EntityTypeConfiguration<TermehRole>
     {
         public IdentityUser1Configuration()
         {
             HasKey(user => user.Id);
-            ToTable("Roles", "User");
+            ToTable("Roles");
         }
     }
-    public class IdentityUser2Configuration : EntityTypeConfiguration<GuidUserClaim>
+    public class IdentityUser2Configuration : EntityTypeConfiguration<TermehUserClaim>
     {
         public IdentityUser2Configuration()
         {
-            HasKey(user => user.Id);
-            ToTable("UserClaims", "User");
+            HasKey(user => user.Id).;
+            ToTable("UserClaims");
         }
     }
 }
