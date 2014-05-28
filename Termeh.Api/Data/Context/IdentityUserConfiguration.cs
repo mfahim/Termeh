@@ -8,8 +8,10 @@ namespace JobTrack.Api.Data.Context
         public IdentityUserConfiguration()
         {
             HasKey(user => user.Id);
-            HasMany(usr => usr.Jobs).WithRequired().WillCascadeOnDelete(false);
-            ToTable("TermehUsers", "User");
+            HasMany(usr => usr.Jobs).WithRequired().HasForeignKey(fk => fk.AssignedToUserId).WillCascadeOnDelete(false);
+            HasMany(usr => usr.Jobs).WithRequired().HasForeignKey(fk => fk.CreatedById).WillCascadeOnDelete(false);
+            HasMany(usr => usr.TermUserRoles).WithRequired().HasForeignKey(fk => fk.UserId).WillCascadeOnDelete(false);
+            ToTable("TermehUsers");
         }
     }
     public class IdentityUser1Configuration : EntityTypeConfiguration<TermehRole>
@@ -17,15 +19,16 @@ namespace JobTrack.Api.Data.Context
         public IdentityUser1Configuration()
         {
             HasKey(user => user.Id);
-            ToTable("Roles");
+            HasMany(usr => usr.TermUserRoles).WithRequired().HasForeignKey(fk => fk.RoleId).WillCascadeOnDelete(false);
+            ToTable("TermehRoles");
         }
     }
     public class IdentityUser2Configuration : EntityTypeConfiguration<TermehUserClaim>
     {
         public IdentityUser2Configuration()
         {
-            HasKey(user => user.Id).;
-            ToTable("UserClaims");
+            HasKey(user => user.Id);
+            ToTable("TermehUserClaims");
         }
     }
 }

@@ -5,46 +5,47 @@ using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace JobTrack.Api.Data.Context
 {
-    public class SqlTablesInitializer : DropCreateDatabaseAlways<JobTrackDbContext>
+    public class ApplicationDbInitializer : DropCreateDatabaseAlways<JobTrackDbContext>
     {
-        protected override void Seed(JobTrackDbContext context)
+        public ApplicationDbInitializer(JobTrackDbContext context)
         {
+            base.Seed(context);
+
             InitApplicationUsers(context);
             InitJobStatuses(context);
-
             context.SaveChanges();
         }
 
         private static void InitApplicationUsers(JobTrackDbContext context)
         {
-            var userManager = new UserManager<TermehUser, int>(new GuidUserStore(context));
-            userManager.UserValidator = new UserValidator<TermehUser, int>(userManager)
-            {
-                AllowOnlyAlphanumericUserNames = false
-            };
-            var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(context));
+            const string name = "admin@admin.com";
+            const string password = "Admin@123456";
+            const string roleName = "Admin";
+            var applicationRoleManager = IdentityFactory.CreateRoleManager(context);
+            var applicationUserManager = IdentityFactory.CreateUserManager(context);
 
-            if (!roleManager.RoleExists("Admin"))
+            //Create Role Admin if it does not exist
+            var role = applicationRoleManager.FindByName(roleName);
+            if (role == null)
             {
-                roleManager.Create(new IdentityRole("Admin"));
+                role = new TermehRole() { Name = roleName };
+                applicationRoleManager.Create(role);
             }
 
-            if (!roleManager.RoleExists("Member"))
+            var user = applicationUserManager.FindByName(name);
+            if (user == null)
             {
-                roleManager.Create(new IdentityRole("Member"));
+                user = new TermehUser() { UserName = name, Email = name, FirstName = "Admin", LastName = "Termeh"};
+                applicationUserManager.Create(user, password);
+                applicationUserManager.SetLockoutEnabled(user.Id, false);
             }
 
-            var user = new TermehUser(1)
-                {FirstName = "Admin", LastName = "Termeh", Email = "admin@hotmail.com"};
-
-            var userResult = userManager.Create(user, "Termeh");
-
-            if (userResult.Succeeded)
+            // Add user admin to Role Admin if not already added
+            var rolesForUser = applicationUserManager.GetRoles(user.Id);
+            if (!rolesForUser.Contains(role.Name))
             {
-                //var user = userManager.FindByName("admin@marlabs.com");
-                //userManager.AddToRole<>(user.Id, "Admin");
-            }
-            
+                applicationUserManager.AddToRole(user.Id, role.Name);
+            }            
         }
         private static void InitJobStatuses(JobTrackDbContext context)
         {
@@ -55,6 +56,6 @@ namespace JobTrack.Api.Data.Context
             jobStatuses.Add(new JobStatus() { Id = 4, Name = "Dispatched" });
             jobStatuses.Add(new JobStatus() { Id = 5, Name = "Finished" });
             jobStatuses.Add(new JobStatus() { Id = 6, Name = "Cancelled" });
-        }        
+        }
     }
 }

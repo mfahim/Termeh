@@ -3,13 +3,12 @@ using JobTrack.Api.Data.Models;
 
 namespace JobTrack.Api.Data.Context
 {
-    public class IdentityUserRoleConfiguration : EntityTypeConfiguration<GuidUserRole>
+    public class IdentityUserRoleConfiguration : EntityTypeConfiguration<TermehUserRole>
     {
         public IdentityUserRoleConfiguration()
         {
-            ToTable("UserRoles", "User");
+            ToTable("TermehUserRoles");
             HasKey(role => new { role.RoleId, role.UserId });
-            //HasRequired(role => role.User).WithMany().HasForeignKey(role => role.UserId);
         }
     }
 }

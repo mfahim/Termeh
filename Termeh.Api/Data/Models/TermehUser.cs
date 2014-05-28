@@ -12,11 +12,7 @@ namespace JobTrack.Api.Data.Models
     }
     public class TermehUserRole : IdentityUserRole<int> { }
     public class TermehUserClaim : IdentityUserClaim<int> { }
-
-    public class TermehUserLogin : IdentityUserLogin<int>
-    {
-
-    }
+    public class TermehUserLogin : IdentityUserLogin<int> { }
 
     public class TermehUser : IdentityUser<int, TermehUserLogin, TermehUserRole, TermehUserClaim>
     {
@@ -25,5 +21,6 @@ namespace JobTrack.Api.Data.Models
 
 
         public virtual ICollection<Job> Jobs { get; set; }
+        public virtual ICollection<TermehUserRole> TermUserRoles { get; set; }
     }
 }

@@ -3,13 +3,13 @@ using JobTrack.Api.Data.Models;
 
 namespace JobTrack.Api.Data.Context
 {
-    public class IdentityUserLoginConfiguration : EntityTypeConfiguration<GuidUserLogin>
+    public class IdentityUserLoginConfiguration : EntityTypeConfiguration<TermehUserLogin>
     {
         public IdentityUserLoginConfiguration()
         {
-            ToTable("UserLogins", "User");
+            ToTable("TermehUserLogins");
             HasKey(login => new { login.UserId, login.LoginProvider, login.ProviderKey });
-            Property(l => l.UserId).HasColumnType("int");
+            //Property(l => l.UserId).HasColumnType("int");
         }
     }
 }

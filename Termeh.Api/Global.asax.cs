@@ -1,10 +1,12 @@
 ﻿using System.Configuration;
 using System.Data.Entity;
+using System.Linq;
 using System.Net.Http.Formatting;
 using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Routing;
 using JobTrack.Api.Data.Context;
+using JobTrack.Api.Data.Models;
 using JobTrack.Api.DependencyResolution;
 using StructureMap;
 
@@ -27,8 +29,10 @@ namespace JobTrack.Api
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             ApplicationConverterBootStrapper.Start();
 
-            var sqlInitial = new SqlTablesInitializer();
-            sqlInitial.InitializeDatabase((JobTrackDbContext)new JobTrackDbContext(ConfigurationManager.ConnectionStrings["JobTrackDbContext"].Name));
+            var t = new JobTrackDbContext(ConfigurationManager.ConnectionStrings["JobTrackDbContext"].Name);
+            var df = ObjectFactory.GetInstance<DbContext>();
+            var er = df.Set<Job>().ToList();
+            //sqlInitial.InitializeDatabase((JobTrackDbContext)new JobTrackDbContext(ConfigurationManager.ConnectionStrings["JobTrackDbContext"].Name));
             //ObjectFactory.GetInstance<DbContext>()
         }
     }

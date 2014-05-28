@@ -1,5 +1,6 @@
 ﻿using ShortBus;
 using StructureMap;
+using StructureMap.Graph;
 
 namespace JobTrack.Api.DependencyResolution
 {
