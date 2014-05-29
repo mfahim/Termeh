@@ -8,7 +8,7 @@ namespace JobTrack.Api.Data.Context
     {
         public static UserManager<TermehUser, int> CreateUserManager(JobTrackDbContext context)
         {
-            var manager = new UserManager<TermehUser, int>(new GuidUserStore(context));
+            var manager = new UserManager<TermehUser, int>(new TermehUserStore(context));
             // Configure validation logic for usernames
             manager.UserValidator = new UserValidator<TermehUser, int>(manager)
                 {
@@ -44,7 +44,7 @@ namespace JobTrack.Api.Data.Context
 
         public static RoleManager<TermehRole, int> CreateRoleManager(JobTrackDbContext context)
         {
-            return new RoleManager<TermehRole, int>(new GuidRoleStore(context));
+            return new RoleManager<TermehRole, int>(new TermehRoleStore(context));
         }
     }
 }

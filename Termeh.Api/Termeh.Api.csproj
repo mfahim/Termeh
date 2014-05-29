@@ -190,11 +190,17 @@
     <Compile Include="Data\Commands\AddJobCommand.cs" />
     <Compile Include="Data\Commands\DeleteJobAttachmentHandler.cs" />
     <Compile Include="Data\Context\IdentityFactory.cs" />
+    <Compile Include="Data\Context\IdentityRoleConfiguration.cs" />
+    <Compile Include="Data\Context\IdentityUserClaimConfiguration.cs" />
     <Compile Include="Data\Context\IdentityUserConfiguration.cs" />
     <Compile Include="Data\Context\IdentityUserLoginConfiguration.cs" />
     <Compile Include="Data\Context\IdentityUserRoleConfiguration.cs" />
     <Compile Include="Data\Context\JobConfiguration.cs" />
+    <Compile Include="Data\Context\TermehRoleStore.cs" />
+    <Compile Include="Data\Context\TermehUserManager.cs" />
+    <Compile Include="Data\Context\TermehUserStore.cs" />
     <Compile Include="Data\Models\JobAttachment.cs" />
+    <Compile Include="Data\Models\TermehRole.cs" />
     <Compile Include="Data\Models\TermehUser.cs" />
     <Compile Include="Data\Models\Job.cs" />
     <Compile Include="Data\Models\JobStatus.cs" />
@@ -204,6 +210,7 @@
     <Compile Include="Data\Commands\AddJobHandler.cs" />
     <Compile Include="Data\Commands\DeleteJobHandler.cs" />
     <Compile Include="Data\Commands\EditJobHandler.cs" />
+    <Compile Include="Data\Models\TermehUserRole.cs" />
     <Compile Include="Data\Queries\JobStatus\ShowJobStatusesHandler.cs" />
     <Compile Include="Data\Queries\Job\IndexJobQuery.cs" />
     <Compile Include="Data\Queries\Job\IndexJobsHandler.cs" />

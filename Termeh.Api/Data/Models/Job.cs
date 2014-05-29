@@ -20,5 +20,10 @@ namespace JobTrack.Api.Data.Models
         public virtual int AssignedToUserId { get; set; }
         public virtual int JobStatusId { get; set; }
         public virtual IList<JobAttachment> Attachments { get; set; }
+
+        public Job()
+        {
+            Attachments = new List<JobAttachment>();            
+        }
     }
 }

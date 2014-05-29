@@ -9,7 +9,6 @@ namespace JobTrack.Api.Data.Context
         {
             ToTable("TermehUserLogins");
             HasKey(login => new { login.UserId, login.LoginProvider, login.ProviderKey });
-            //Property(l => l.UserId).HasColumnType("int");
         }
     }
 }

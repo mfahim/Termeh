@@ -14,21 +14,4 @@ namespace JobTrack.Api.Data.Context
             ToTable("TermehUsers");
         }
     }
-    public class IdentityUser1Configuration : EntityTypeConfiguration<TermehRole>
-    {
-        public IdentityUser1Configuration()
-        {
-            HasKey(user => user.Id);
-            HasMany(usr => usr.TermUserRoles).WithRequired().HasForeignKey(fk => fk.RoleId).WillCascadeOnDelete(false);
-            ToTable("TermehRoles");
-        }
-    }
-    public class IdentityUser2Configuration : EntityTypeConfiguration<TermehUserClaim>
-    {
-        public IdentityUser2Configuration()
-        {
-            HasKey(user => user.Id);
-            ToTable("TermehUserClaims");
-        }
-    }
 }
