@@ -20,7 +20,7 @@ namespace JobTrack.Api.Data.Commands
 
         public void Handle(EditJobCommand message)
         {
-            var userId = _context.Set<TermehUser>().SingleOrDefaultAsync(usr => usr.Id == message.Username).Result.Id;
+            var userId = _context.Set<TermehUser>().SingleOrDefaultAsync(usr => usr.Id == message.AssignedToUserId).Result.Id;
 
             var jb = _context.Set<Job>().Single(p => p.Id == message.Id);
             jb.JobNumber = message.JobNumber;

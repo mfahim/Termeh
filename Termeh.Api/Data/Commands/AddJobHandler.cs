@@ -16,7 +16,7 @@ namespace JobTrack.Api.Data.Commands
 
         public void Handle(AddJobCommand message)
         {
-            var userId = _context.Set<TermehUser>().FirstAsync().Result.Id;
+            var userId = _context.Set<TermehUser>().SingleOrDefaultAsync(usr => usr.Id == message.AssignedToUserId).Result.Id;
             _context.Set<Job>().Add(new Job()
                 {
                     CreatedDate = DateTime.Now,

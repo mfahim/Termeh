@@ -8,8 +8,6 @@ namespace JobTrack.Api.Data.Models
         public string FirstName { get; set; }
         public string LastName { get; set; }
 
-
         public virtual ICollection<Job> Jobs { get; set; }
-        public virtual ICollection<TermehUserRole> TermUserRoles { get; set; }
     }
 }

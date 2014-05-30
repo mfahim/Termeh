@@ -10,7 +10,7 @@ namespace JobTrack.Api.Data.Context
             HasKey(user => user.Id);
             HasMany(usr => usr.Jobs).WithRequired().HasForeignKey(fk => fk.AssignedToUserId).WillCascadeOnDelete(false);
             HasMany(usr => usr.Jobs).WithRequired().HasForeignKey(fk => fk.CreatedById).WillCascadeOnDelete(false);
-            HasMany(usr => usr.TermUserRoles).WithRequired().HasForeignKey(fk => fk.UserId).WillCascadeOnDelete(false);
+            //HasMany(usr => usr.TermUserRoles).WithRequired().HasForeignKey(fk => fk.UserId).WillCascadeOnDelete(false);
             ToTable("TermehUsers");
         }
     }

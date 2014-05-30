@@ -9,7 +9,7 @@ namespace JobTrack.Api.Data.Commands
         public string Name { get; set; }
         public string Description { get; set; }
         public DateTime CreatedDate { get; set; }
-        public int CreatedById { get; set; }
+        public int AssignedToUserId { get; set; }
         public DateTime DueDate { get; set; }
         public decimal Quantity { get; set; }
         public string Username { get; set; }
@@ -22,7 +22,7 @@ namespace JobTrack.Api.Data.Commands
         public string Name { get; set; }
         public string Description { get; set; }
         public DateTime CreatedDate { get; set; }
-        public int CreatedById { get; set; }
+        public int AssignedToUserId { get; set; }
         public DateTime DueDate { get; set; }
         public decimal Quantity { get; set; }
         public int Username { get; set; }
