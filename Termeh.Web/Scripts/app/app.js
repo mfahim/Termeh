@@ -1,4 +1,4 @@
-﻿window.app = angular.module('resourceManagerApp', ['ui.select2', 'ngRoute', 'ngResource', 'ngAnimate']);
+﻿window.app = angular.module('resourceManagerApp', ['ui.select2', 'ui.bootstrap', 'ngRoute', 'ngResource', 'ngAnimate']);
 
 app.config(['$routeProvider', '$locationProvider', '$httpProvider', '$provide', 
     function ($routeProvider, $locationProvider, $httpProvider, $provide) {

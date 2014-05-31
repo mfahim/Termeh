@@ -1,7 +1,6 @@
 ﻿app.controller('JobsCtrl', ['$scope', 'jobSvc', 'confirmSvc', function ($scope, jobSvc, confirmSvc) {
 
     $scope.jobs = [];
-
     $scope.deleteJob = function (jobId) {
         if (confirmSvc.confirm('Are you sure you want to delete this item?')) {
             jobSvc.deleteJob(jobId)
@@ -23,5 +22,9 @@
             $scope.jobs = data;
             $scope.loading = false;
         });
+    }
+
+    function getJobs() {
+        return jobSvc.getJobs();
     }
 }]);

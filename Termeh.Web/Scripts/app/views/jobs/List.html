@@ -4,8 +4,9 @@
     <div class="ui header">Jobs List</div>
 </div>
 <div>
-    <input type="text" ng-model="selected" typeahead="suggestion for suggestion in jobs($viewValue)">
-        <table class="ui six column table segment">
+    <input type="text" ng-model="customSelected" placeholder="Custom template" 
+        typeahead="name for name in jobs | limitTo:8">
+    <table class="ui six column table segment">
         <thead>
             <tr>
                 <th>Job Number</th>
