@@ -3,50 +3,55 @@
 <div class="ui message">
     <div class="ui header">Jobs List</div>
 </div>
-<div>
-    <input type="text" ng-model="customSelected" placeholder="Custom template" 
-        typeahead="name for name in jobs | limitTo:8">
-    <table class="ui six column table segment">
-        <thead>
-            <tr>
-                <th>Job Number</th>
-                <th>Name</th>
-                <th>Quantity</th>
-                <th>Rep Name</th>
-                <th>Attachments</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr></tr>
-            <tr>
-                <td class="danger" colspan="6" data-ng-show="jobs.length == 0">
-                    There are no jobs
-                </td>
-            </tr>
-            <tr data-ng-repeat="job in jobs" data-ng-class="{'warning': job.AttchmentCount > 0}">
-                <td>
-                    <a href="/Jobs/{{job.Id}}">{{job.JobNumber}}</a>
-                </td>
-                <td>{{job.Name}}</td>
-                <td>{{job.Quantity}}</td>
-                <td>{{job.AssignedTo}}</td>
-                <td>{{job.AttchmentCount}}</td>
-                <td>
+<div class="ui segment">
+    <div class="container">
+        <div class="ui top segment">Search Jobs : 
+        <input type="text" data-ng-model="selected" placeholder="Please enter your job name ..." 
+               typeahead="job.Name for job in jobs | limitTo:20" class="ui dropdown" style="width:90%;">        
+
+        </div>
+        <table class="ui six column table segment">
+            <thead>
+                <tr>
+                    <th>Job Number</th>
+                    <th>Name</th>
+                    <th>Quantity</th>
+                    <th>Rep Name</th>
+                    <th>Attachments</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr></tr>
+                <tr>
+                    <td class="danger" colspan="6" data-ng-show="jobs.length == 0">
+                        There are no jobs
+                    </td>
+                </tr>
+                <tr data-ng-repeat="job in jobs" data-ng-class="{'warning': job.AttchmentCount > 0}">
+                    <td>
+                        <a href="/Jobs/{{job.Id}}">{{job.JobNumber}}</a>
+                    </td>
+                    <td>{{job.Name}}</td>
+                    <td>{{job.Quantity}}</td>
+                    <td>{{job.AssignedTo}}</td>
+                    <td>{{job.AttchmentCount}}</td>
+                    <td>
                     
-                    <a href="/Jobs/Edit/{{job.Id}}"><i class="square edit teal icon"></i></a>
-                    <a href="javascript:;" data-ng-click="deleteJob(job.Id)"><i class="square red trash icon"></i></a>
-                </td>
-            </tr>
-        </tbody>
-        <tfoot>
-            <tr>
-                <th colspan="6">
-                    <div class="ui primary button small">
-                        <a href="/Jobs/Add">New Job</a>                        
-                    </div>                
-                </th>
-            </tr>
-        </tfoot>
-    </table>
+                        <a href="/Jobs/Edit/{{job.Id}}"><i class="square edit teal icon"></i></a>
+                        <a href="javascript:;" data-ng-click="deleteJob(job.Id)"><i class="square red trash icon"></i></a>
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th colspan="6">
+                        <div class="ui primary button small">
+                            <a href="/Jobs/Add">New Job</a>                        
+                        </div>                
+                    </th>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
 </div>

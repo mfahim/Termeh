@@ -24,7 +24,4 @@
         });
     }
 
-    function getJobs() {
-        return jobSvc.getJobs();
-    }
 }]);
