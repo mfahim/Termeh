@@ -1,7 +1,7 @@
 ﻿window.app = angular.module('resourceManagerApp', ['ui.select2', 'ui.bootstrap', 'ngRoute', 'ngResource', 'ngAnimate']);
 
 app.config(['$routeProvider', '$locationProvider', '$httpProvider', '$provide', 
-    function ($routeProvider, $locationProvider, $httpProvider, $provide) {
+    function ($routeProvider, $locationProvider, $httpProvider) {
 
     $httpProvider.defaults.useXDomain = true;
     delete $httpProvider.defaults.headers.common['X-Requested-With'];
@@ -21,10 +21,10 @@ app.config(['$routeProvider', '$locationProvider', '$httpProvider', '$provide',
 
     }]);
 
-app.run(function ($rootScope, $templateCache) {
+app.run(['$rootScope, $templateCache', function ($rootScope, $templateCache) {
     $rootScope.$on('$viewContentLoaded', function () {
         $templateCache.removeAll();
     });
-});
+}]);
 
 

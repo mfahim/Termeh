@@ -5,9 +5,15 @@
 </div>
 <div class="ui segment">
     <div class="container">
+        <script type="text/ng-template" id="itemTpl.html">
+            <li ng-repeat="match in matches track by $index" ng-mouseenter="selectActive($index)" ng-click="selectMatch($index)" role="option" id="{{match.Id}}">
+                <div >match</div>
+            </li>
+        </script>
         <div class="ui top segment">Search Jobs : 
         <input type="text" data-ng-model="selected" placeholder="Please enter your job name ..." 
-               typeahead="job.Name for job in jobs | limitTo:20" class="ui dropdown" style="width:90%;">        
+               typeahead="job.Name for job in jobs | filter:{Name:$viewValue} | limitTo:20"
+               typeahead-template-url="itemTpl.html" style="width:90%;">        
 
         </div>
         <table class="ui six column table segment">
