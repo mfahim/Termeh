@@ -21,7 +21,7 @@ app.config(['$routeProvider', '$locationProvider', '$httpProvider', '$provide',
 
     }]);
 
-app.run(['$rootScope, $templateCache', function ($rootScope, $templateCache) {
+app.run(['$rootScope', '$templateCache', function ($rootScope, $templateCache) {
     $rootScope.$on('$viewContentLoaded', function () {
         $templateCache.removeAll();
     });
