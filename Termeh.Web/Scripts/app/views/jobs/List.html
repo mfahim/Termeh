@@ -6,13 +6,17 @@
 <div class="ui segment">
     <div class="container">
         <script type="text/ng-template" id="itemTpl.html">
-            <a tabindex="-1" bind-html-unsafe="match.model.Name | typeaheadHighlight:query"></a>                    
+            <ul class="menu transition hidden">
+                <li ng-repeat="match in matches track by $index" ng-class="item {active: isActive($index) }" ng-mouseenter="selectActive($index)" ng-click="selectMatch($index)" role="option" id="{{match.id}}">
+                    <div query="query"></div>
+                </li>
+            </ul>
         </script>
-        <div class="ui dropdown item">
-            <span>Search Jobs :</span> 
-            <input class="ui large icon input" type="text" data-ng-model="selected" placeholder="Please enter your job name ..." 
+        <div class="ui segment dropdown">            
+            Search Jobs : 
+            <input class="input large" type="text" data-ng-model="selected" placeholder="Please enter your job name ..." 
                    typeahead="job.Name for job in jobs | filter:{Name:$viewValue} | limitTo:20"
-                   style="width:90%;">        
+                >                                        
         </div>
 
         <table class="ui six column table segment">
