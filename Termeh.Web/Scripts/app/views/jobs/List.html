@@ -16,13 +16,13 @@
             <div class="field">                
                 <label>Search Jobs :</label>
                 <div class="dropdown">
-                    <input type="text" data-ng-model="selected" placeholder="Please enter your job name ..." 
+                    <input type="text" data-ng-model="selectedJob" placeholder="Please enter your job name ..." 
+                            typeahead-on-select='onSelect($item, $model, $label)'
                            typeahead="job.Name for job in jobs | filter:{Name:$viewValue} | limitTo:20"
                     >                                                            
                 </div>
             </div>
         </div>
-
         <table class="ui six column table segment">
             <thead>
                 <tr>

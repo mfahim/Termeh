@@ -146,6 +146,7 @@
     <Content Include="Scripts\app\directives\shared\jobAttachment.js" />
     <Content Include="Scripts\app\directives\shared\loadingoverlay.js" />
     <Content Include="Scripts\app\directives\shared\modal.js" />
+    <Content Include="Scripts\app\directives\shared\ngEnter.js" />
     <Content Include="Scripts\app\directives\shared\select2dropdown.js" />
     <Content Include="Scripts\app\directives\shared\topmenu.js" />
     <Content Include="Scripts\app\partials\Loader.html" />
