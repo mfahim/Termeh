@@ -12,11 +12,14 @@
 
     init();
 
+    $scope.whenEnterPressed = function () {
+        $location.url('/Jobs/' + $scope.selectedJob.Id);
+    };
+    
     $scope.onSelect = function ($item, $model, $label) {
         $scope.selectedJob = $item;
         $scope.$model = $model;
         $scope.$label = $label;
-        $location.url('/Jobs/' + $scope.selectedJob.Id);
     };
 
     function init() {
