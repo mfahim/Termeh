@@ -1,8 +1,15 @@
-﻿app.controller('HomeCtrl', ['$scope', 'jobSvc', function ($scope, jobSvc) {
+﻿'use strict';
+(function () {
+    var homeController = function($scope, jobSvc) {
 
-    init();
+        init();
 
-    function init() {
-    }
+        function init() {
+        }
+    };
+    homeController.$inject = ['$scope', 'jobSvc'];
 
-}]);
+    angular.module("termeh.ctrl.homeCtrl", [])
+        .controller("homeCtrl", homeController);
+    
+}());

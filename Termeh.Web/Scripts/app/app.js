@@ -1,4 +1,6 @@
-﻿window.app = angular.module('resourceManagerApp', ['ui.select2', 'ui.bootstrap', 'ngRoute', 'ngResource', 'ngAnimate']);
+﻿
+app = angular.module("termeh", ['ui.select2', 'ui.bootstrap', 'ngRoute', 'ngResource', 'ngAnimate',
+    'termeh.ctrl.homeCtrl', 'termeh.ctrl.JobsCtrl']);
 
 app.config(['$routeProvider', '$locationProvider', '$httpProvider', '$provide', 
     function ($routeProvider, $locationProvider, $httpProvider) {
@@ -26,5 +28,3 @@ app.run(['$rootScope', '$templateCache', function ($rootScope, $templateCache) {
         $templateCache.removeAll();
     });
 }]);
-
-
