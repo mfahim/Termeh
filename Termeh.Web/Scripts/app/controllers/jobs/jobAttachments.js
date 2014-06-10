@@ -1,12 +1,13 @@
-﻿app.controller('JobAttachmentCtrl', ['$scope', '$routeParams', 'jobAttachmentSvc', 'confirmSvc',
-    function ($scope, $routeParams, jobAttachmentSvc, confirmSvc) {
+﻿'use strict';
+(function () {
+    var jobAttachmentController = function ($scope, $routeParams, jobAttachmentSvc, confirmSvc) {
 
         init();
 
         function init() {
             loadJobAttachments();
         }
-        
+
         function loadJobAttachments() {
             jobAttachmentSvc.getAttachmentsForAJob($routeParams.jobId).$promise.then(function (data) {
                 $scope.jobAttachments = data;
@@ -21,4 +22,10 @@
                 });
             }
         };
-}]);
+    };
+    jobAttachmentController.$inject = ['$scope', '$routeParams', 'jobAttachmentSvc', 'confirmSvc'];
+
+    angular.module("termeh.ctrl.jobAttachmentCtrl", [])
+        .controller("jobAttachmentCtrl", jobAttachmentController);
+
+}());

@@ -1,6 +1,6 @@
 ﻿'use strict';
 (function () {
-    var JobsCtrl = function ($scope, jobSvc, $location, confirmSvc) {
+    var jobsCtrl = function ($scope, jobSvc, $location, confirmSvc) {
 
         $scope.jobs = [];
         $scope.deleteJob = function (jobId) {
@@ -36,9 +36,9 @@
             });
         }
     };
-    JobsCtrl.$inject = ['$scope', 'jobSvc', '$location', 'confirmSvc'];
+    jobsCtrl.$inject = ['$scope', 'jobSvc', '$location', 'confirmSvc'];
 
-    angular.module("termeh.ctrl.JobsCtrl", [])
-        .controller("JobsCtrl", JobsCtrl);
+    angular.module("termeh.ctrl.jobsCtrl", [])
+        .controller("jobsCtrl", jobsCtrl);
 
 }());
