@@ -1,4 +1,6 @@
-﻿app.factory('jobStatusSvc', ['$resource', 'serviceHelperSvc', function ($resource, serviceHelper) {
+﻿(function () {
+    
+    var jobStatusSvc = function ($resource, serviceHelper) {
     var JobStatus = serviceHelper.JobStatus;
 
     return {
@@ -6,4 +8,9 @@
             return JobStatus.query();
         }
     };
-}]);
+ };
+
+jobStatusSvc.$inject = ['$resource', 'serviceHelperSvc'];
+app.factory('jobStatusSvc', jobStatusSvc);
+    
+}());
