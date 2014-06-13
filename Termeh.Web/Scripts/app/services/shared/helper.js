@@ -16,7 +16,7 @@
         Job: $resource(buildUrl('api/Job/:jobId'),
             { jobId: '@Id' },
             { 'update': { method: 'PUT' } }),
-        
+
         JobAttachment: $resource(buildUrl('api/JobAttachment/:jobAttachmentId'),
             { jobAttachmentId: '@Id' },
             { 'update': { method: 'PUT' } }),

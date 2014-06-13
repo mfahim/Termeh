@@ -1,6 +1,7 @@
-﻿(function () {
+﻿'use strict';
+(function() {
     var jobAttachmentSvc = function ($resource, $q, serviceHelper) {
-    var jobAttachService = serviceHelper.JobAttachment;
+        var jobAttachService = serviceHelper.JobAttachment;
 
     return {
         getAttachmentsForAJob: function(jobId) {
@@ -17,7 +18,7 @@
         }
     };
 };
-
-jobAttachmentSvc.$inject = ['$resource', '$q', 'serviceHelperSvc'];
-app.factory('jobAttachmentSvc', ['$resource', '$q', 'serviceHelperSvc'], jobAttachmentSvc);
+              
+    jobAttachmentSvc.$inject = ['$resource', '$q', 'serviceHelperSvc'];
+    angular.module("termeh.services.jobAttachment", []).factory('jobAttachmentSvc', jobAttachmentSvc);
 }());

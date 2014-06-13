@@ -1,4 +1,5 @@
-﻿(function () {
+﻿'use strict';
+(function () {
     
     var jobStatusSvc = function ($resource, serviceHelper) {
     var JobStatus = serviceHelper.JobStatus;
@@ -11,6 +12,6 @@
  };
 
 jobStatusSvc.$inject = ['$resource', 'serviceHelperSvc'];
-app.factory('jobStatusSvc', jobStatusSvc);
+angular.module("termeh.services.jobStatus", []).factory('jobStatusSvc', jobStatusSvc);
     
 }());

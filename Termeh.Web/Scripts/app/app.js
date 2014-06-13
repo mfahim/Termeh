@@ -1,5 +1,6 @@
 ﻿
 app = angular.module("termeh", ['ui.select2', 'ui.bootstrap', 'ngRoute', 'ngResource', 'ngAnimate',
+    'termeh.services.jobAttachment', 'termeh.services.job', 'termeh.services.jobStatus',
     'termeh.ctrl.homeCtrl', 'termeh.ctrl.jobsCtrl', 'termeh.ctrl.jobCtrl',
     'termeh.ctrl.jobAttachmentAddCtrl', 'termeh.ctrl.jobAttachmentCtrl',
     'termeh.ctrl.jobEditCtrl', 'termeh.ctrl.resourceManagerCtrl'
