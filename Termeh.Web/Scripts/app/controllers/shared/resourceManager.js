@@ -1,6 +1,6 @@
 ﻿'use strict';
 (function () {
-    var resourceManagerController = function ($scope, $location) {
+    var resourceManagerCtrl = function ($scope, $location) {
 
         init();
 
@@ -8,9 +8,9 @@
             $location.url('/Home');
         }
     };
-    resourceManagerController.$inject = ['$scope', '$location', 'resourceMngrSvc'];
+    resourceManagerCtrl.$inject = ['$scope', '$location'];
 
-    angular.module("termeh.ctrl.resourceManagerCtrl", [])
-        .controller("resourceManagerCtrl", resourceManagerController);
+    angular.module("termeh", [])
+        .controller("resourceManagerCtrl", resourceManagerCtrl);
 
 }());

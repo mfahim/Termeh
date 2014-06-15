@@ -26,6 +26,6 @@
     };
 
     helperService.$inject = ['$http', '$resource'];
-    angular.module("termeh.service", []).factory('helperService', helperService);
+    angular.module("termeh", []).factory('helperService', helperService);
 
 }());

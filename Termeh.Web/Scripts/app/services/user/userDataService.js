@@ -1,7 +1,7 @@
 ﻿'use strict';
 (function () {
-    var userDataService = function($resource, serviceHelper) {
-        var userApi = serviceHelper.User;
+    var userDataService = function ($resource, helperService) {
+        var userApi = helperService.User;
 
         return {
             get: function() {
@@ -9,6 +9,6 @@
             }
         };
     };
-    userDataService.$inject = ['$resource', 'serviceHelperSvc'];
+    userDataService.$inject = ['$resource', 'helperService'];
     angular.module("termeh.user.service", []).factory('userDataService', userDataService);
 }());
