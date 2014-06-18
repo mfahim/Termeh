@@ -1,11 +1,11 @@
 ﻿'use strict';
 (function () {
-    var jobsCtrl = function ($scope, jobSvc, $location, confirmSvc) {
+    var jobsCtrl = function ($scope, jobDataService, $location, confirmSvc) {
 
         $scope.jobs = [];
         $scope.deleteJob = function (jobId) {
             if (confirmSvc.confirm('Are you sure you want to delete this item?')) {
-                jobSvc.deleteJob(jobId)
+                jobDataService.deleteJob(jobId)
                 .then(function (data) {
                     loadJobs();
                 });
@@ -30,15 +30,15 @@
         }
 
         function loadJobs() {
-            jobSvc.getJobs().$promise.then(function (data) {
+            jobDataService.getJobs().$promise.then(function (data) {
                 $scope.jobs = data;
                 $scope.loading = false;
             });
         }
     };
-    jobsCtrl.$inject = ['$scope', 'jobSvc', '$location', 'confirmSvc'];
+    jobsCtrl.$inject = ['$scope', 'jobDataService', '$location', 'confirmSvc'];
 
-    angular.module("termeh.ctrl.jobsCtrl", [])
+    angular.module("termeh", [])
         .controller("jobsCtrl", jobsCtrl);
 
 }());

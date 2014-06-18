@@ -1,20 +1,20 @@
 ﻿'use strict';
 (function () {
-    var jobAttachmentAddController = function ($scope, $location, $routeParams, jobAttachmentSvc) {
+    var jobAttachmentAddController = function ($scope, $location, $routeParams, jobAttachmentDataService) {
 
         $scope.jobId = $routeParams.jobId;
 
         $scope.addAttachment = function (jobAttach) {
             jobAttach.jobId = $scope.jobId;
-            jobAttachmentSvc.addJobAttachment(jobAttach)
+            jobAttachmentDataService.addJobAttachment(jobAttach)
                 .then(function (jobAttach) {
                     $location.url('/Jobs/' + $scope.jobId);
                 });
         };
     };
-    jobAttachmentAddController.$inject = ['$scope', '$location', '$routeParams', 'jobAttachmentSvc'];
+    jobAttachmentAddController.$inject = ['$scope', '$location', '$routeParams', 'jobAttachmentDataService'];
 
-    angular.module("termeh.ctrl.jobAttachmentAddCtrl", [])
+    angular.module("termeh", [])
         .controller("jobAttachmentAddCtrl", jobAttachmentAddController);
 
 }());

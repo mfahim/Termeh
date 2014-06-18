@@ -1,17 +1,17 @@
 ﻿'use strict';
 (function () {
-    var jobEditController = function ($scope, $location, $routeParams, jobSvc, userSvc) {
+    var jobEditController = function ($scope, $location, $routeParams, jobDataService, userSvc) {
 
             init();
 
             $scope.editJob = function (job) {
-                jobSvc.editJob(job).then(function (data) {
+                jobDataService.editJob(job).then(function (data) {
                     $location.url('/Jobs');
                 });
             };
 
             function init() {
-                jobSvc.createJobEditFormModel($routeParams.jobId)
+                jobDataService.createJobEditFormModel($routeParams.jobId)
                 .then(function (data)
                 {
                     $scope.job = data[0];
@@ -23,9 +23,9 @@
             }
         };
         
-    jobEditController.$inject = ['$scope', '$location', '$routeParams', 'jobSvc', 'userSvc'];
+    jobEditController.$inject = ['$scope', '$location', '$routeParams', 'jobDataService', 'userSvc'];
 
-    angular.module("termeh.ctrl.jobEditCtrl", [])
+    angular.module("termeh", [])
         .controller("jobEditCtrl", jobEditController);
 
 }());

@@ -1,6 +1,6 @@
 ﻿'use strict';
 (function () {
-    var jobAttachmentController = function ($scope, $routeParams, jobAttachmentSvc, confirmSvc) {
+    var jobAttachmentController = function ($scope, $routeParams, jobAttachmentDataService, confirmSvc) {
 
         init();
 
@@ -9,23 +9,23 @@
         }
 
         function loadJobAttachments() {
-            jobAttachmentSvc.getAttachmentsForAJob($routeParams.jobId).$promise.then(function (data) {
+            jobAttachmentDataService.getAttachmentsForAJob($routeParams.jobId).$promise.then(function (data) {
                 $scope.jobAttachments = data;
             });
         }
 
         $scope.deleteJobAttachment = function (jobAttachmentId) {
             if (confirmSvc.confirm('Are you sure you want to delete this item?')) {
-                jobAttachmentSvc.deleteJobAttachment(jobAttachmentId)
+                jobAttachmentDataService.deleteJobAttachment(jobAttachmentId)
                 .then(function (data) {
                     loadJobAttachments();
                 });
             }
         };
     };
-    jobAttachmentController.$inject = ['$scope', '$routeParams', 'jobAttachmentSvc', 'confirmSvc'];
+    jobAttachmentController.$inject = ['$scope', '$routeParams', 'jobAttachmentDataService', 'confirmSvc'];
 
-    angular.module("termeh.ctrl.jobAttachmentCtrl", [])
+    angular.module("termeh", [])
         .controller("jobAttachmentCtrl", jobAttachmentController);
 
 }());
