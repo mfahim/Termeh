@@ -10,7 +10,7 @@
     };
     resourceManagerCtrl.$inject = ['$scope', '$location'];
 
-    angular.module("termeh", [])
+    angular.module("termeh.ctrl", [])
         .controller("resourceManagerCtrl", resourceManagerCtrl);
 
 }());

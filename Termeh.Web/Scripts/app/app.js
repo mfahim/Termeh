@@ -25,7 +25,7 @@ app.config(['$routeProvider', '$locationProvider', '$httpProvider', '$provide',
         //.when('/Jobs/Edit/:jobId', { templateUrl: '/Scripts/app/views/jobs/Edit.html', controller: 'jobEditCtrl', disableCache: true })
         //.when('/Jobs/:jobId', { templateUrl: '/Scripts/app/views/jobs/Details.html', controller: 'jobCtrl', disableCache: true })
         .when('/Home', { templateUrl: '/Scripts/app/views/home/Home.html', controller: 'homeCtrl', disableCache: true })
-        .when('/Error', { templateUrl: '/Scripts/app/views/shared/Error.html'})
+        //.when('/Error', { templateUrl: '/Scripts/app/views/shared/Error.html'})
         .otherwise({ redirectTo: '/Home', disableCache: true });
     }]);
 
