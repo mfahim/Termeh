@@ -1,12 +1,9 @@
-﻿app.controller('homeCtrl', ['$scope', function ($scope) {
+﻿var controllerModule = angular.module('termeh.controllers');
+controllerModule.controller("homeCtrl", ['$scope', function ($scope) {
 
     $scope.jobs = [1, 2, 34, 5];
-    init();
-
-    function init() {
-    }
-
 }]);
+    
 
 //'use strict';
 //(function () {
