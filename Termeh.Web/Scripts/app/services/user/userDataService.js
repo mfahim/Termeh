@@ -1,5 +1,6 @@
 ﻿'use strict';
 (function () {
+    var app = angular.module("termeh.services");
     var userDataService = function ($resource, helperService) {
         var userApi = helperService.User;
 
@@ -10,5 +11,5 @@
         };
     };
     userDataService.$inject = ['$resource', 'helperService'];
-    angular.module("termeh.user.service", []).factory('userDataService', userDataService);
+    app.factory('userDataService', userDataService);
 }());
