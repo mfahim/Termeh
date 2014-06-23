@@ -1,5 +1,6 @@
 ﻿'use strict';
 (function () {
+    var app = angular.module("termeh.controllers");
     var jobController = function ($scope, $routeParams, $location, jobDataService, userDataService, jobAttachmentDataService) {
 
         $scope.job = { hasActivites: false };
@@ -30,7 +31,6 @@
     };
     jobController.$inject = ['$scope', '$routeParams', '$location', 'jobDataService', 'userDataService', 'jobAttachmentDataService'];
 
-    angular.module("termeh", [])
-        .controller("jobCtrl", jobController);
+    app.controller("JobCtrl", jobController);
 
 }());

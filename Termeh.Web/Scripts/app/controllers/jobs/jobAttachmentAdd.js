@@ -1,5 +1,6 @@
 ﻿'use strict';
 (function () {
+    var app = angular.module("termeh.controllers");
     var jobAttachmentAddController = function ($scope, $location, $routeParams, jobAttachmentDataService) {
 
         $scope.jobId = $routeParams.jobId;
@@ -14,7 +15,6 @@
     };
     jobAttachmentAddController.$inject = ['$scope', '$location', '$routeParams', 'jobAttachmentDataService'];
 
-    angular.module("termeh", [])
-        .controller("jobAttachmentAddCtrl", jobAttachmentAddController);
+    app.controller("JobAttachmentAddCtrl", jobAttachmentAddController);
 
 }());

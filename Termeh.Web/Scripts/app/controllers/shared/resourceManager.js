@@ -1,5 +1,6 @@
 ﻿'use strict';
 (function () {
+    var app = angular.module("termeh.controllers");
     var resourceManagerCtrl = function ($scope, $location) {
 
         init();
@@ -10,7 +11,6 @@
     };
     resourceManagerCtrl.$inject = ['$scope', '$location'];
 
-    angular.module("termeh.ctrl", [])
-        .controller("resourceManagerCtrl", resourceManagerCtrl);
+    app.controller("ResourceManagerCtrl", resourceManagerCtrl);
 
 }());

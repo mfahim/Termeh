@@ -1,28 +1,18 @@
-﻿var controllerModule = angular.module('termeh.controllers');
-controllerModule.controller("homeCtrl", ['$scope', function ($scope) {
+﻿'use strict';
+(function () {
+    var app = angular.module("termeh.controllers");
 
-    $scope.jobs = [1, 2, 34, 5];
-}]);
+    var homeController = function ($scope) {
+
+        init();
+
+        function init() {
+            $scope.greeting = 'salam!';
+        }
+    };
+    homeController.$inject = ['$scope'];
+
+    app.controller("HomeCtrl", homeController);
+
+}());
     
-
-//'use strict';
-//(function () {
-//    var homeController = function ($scope) {
-
-//        $scope.jobs = [1, 2, 34, 5];
-//        //var jobApi = helperService.Job;
-        
-//        init();
-
-//        function init() {
-//            //jobApi.getJobs().$promise.then(function (data) {
-//            //    $scope.jobs = data;
-//            //});
-//        }
-//    };
-//    homeController.$inject = ['$scope'];
-
-//    var module = angular.module("termeh");
-//    module.controller("homeCtrl", homeController);
-//}());
-

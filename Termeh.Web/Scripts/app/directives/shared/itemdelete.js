@@ -1,12 +1,16 @@
-﻿app.directive('cstDelete', function () {
-    return {
-        replace: true,
+﻿'use strict';
+(function () {
+    var app = angular.module("termeh");
+    app.directive('cstDelete', function () {
+        return {
+            replace: true,
         
-    link: function ($scope, element, attrs, controller) {
-        console.log(element);
-        element.on('click', function (ev) { 
-            return confirm('Delete item?');
-        });
-    }
-};
-});
+        link: function ($scope, element, attrs, controller) {
+            console.log(element);
+            element.on('click', function (ev) { 
+                return confirm('Delete item?');
+            });
+        }
+        };
+    });
+}());

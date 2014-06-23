@@ -1,6 +1,7 @@
 ﻿'use strict';
 (function () {
-    var jobEditController = function ($scope, $location, $routeParams, jobDataService, userSvc) {
+    var app = angular.module("termeh.controllers");
+    var jobEditController = function ($scope, $location, $routeParams, jobDataService, userDataService) {
 
             init();
 
@@ -17,15 +18,14 @@
                     $scope.job = data[0];
                 });
 
-                userSvc.get().$promise.then(function (data) {
+                userDataService.get().$promise.then(function (data) {
                     $scope.users = data;
                 });
             }
         };
         
-    jobEditController.$inject = ['$scope', '$location', '$routeParams', 'jobDataService', 'userSvc'];
+    jobEditController.$inject = ['$scope', '$location', '$routeParams', 'jobDataService', 'userDataService'];
 
-    angular.module("termeh", [])
-        .controller("jobEditCtrl", jobEditController);
+    app.controller("JobEditCtrl", jobEditController);
 
 }());

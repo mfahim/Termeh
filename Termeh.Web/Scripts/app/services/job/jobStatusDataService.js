@@ -1,17 +1,18 @@
 ﻿'use strict';
 (function () {
     
+    var app = angular.module("termeh.services");
     var jobStatusDataService = function ($resource, helperService) {
         var jobStatusApi = helperService.JobStatus;
 
-    return {
-        get: function () {
-            return jobStatusApi.query();
-            }
-        };
+        return {
+            get: function () {
+                return jobStatusApi.query();
+                }
+            };
     };
 
     jobStatusDataService.$inject = ['$resource', 'helperService'];
-    angular.module("termeh.job.service", []).factory('jobStatusDataService', jobStatusDataService);
+    app.factory('jobStatusDataService', jobStatusDataService);
     
 }());

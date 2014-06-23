@@ -1,4 +1,7 @@
-﻿app.directive('cstDatepicker', function () {
+﻿'use strict';
+(function () {
+    var app = angular.module("termeh");
+    app.directive('cstDatepicker', function () {
     return {
         restrict: "A",
         require: 'ngModel',
@@ -9,7 +12,7 @@
                 onSelect: function (d) {
                     ngModelCtrl.$setViewValue(d);
                     scope.$apply();
-                    //ngModelCtrl.$setValidity('invalid', false);
+                    ngModelCtrl.$setValidity('invalid', false);
                 }
             });
             element.on('keypress', function (e) {
@@ -18,4 +21,5 @@
         }
 
     };
-});
+    });
+}());

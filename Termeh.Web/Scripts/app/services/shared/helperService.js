@@ -1,6 +1,8 @@
 ﻿'use strict';
 (function () {
-    var helperService = function($http, $resource) {
+
+    var app = angular.module("termeh.services");
+    var helperService = function ($http, $resource) {
         var baseUrl = config.apiurl;
         var buildUrl = function(resourceUrl) {
             if (resourceUrl.lastIndexOf('/') !== resourceUrl.length - 1) {
@@ -26,6 +28,6 @@
     };
 
     helperService.$inject = ['$http', '$resource'];
-    angular.module("termeh", []).factory('helperService', helperService);
+    app.factory('helperService', helperService);
 
 }());
