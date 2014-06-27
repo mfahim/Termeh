@@ -5,9 +5,10 @@
 </div>
 <div class="ui segment">
     <div class="container">
-        <div class="ui form dropdown">
+        <div class="ui input dropdown" style="width: 100%">
             <div class="field">                
                 <label>Search Jobs :</label>
+                <br/>
                 <div class="dropdown">
                     <input type="text" ng-enter='whenEnterPressed()' data-ng-model="selectedJob" placeholder="Please enter your job name ..." 
                            typeahead-on-select='onSelect($item, $model, $label)'
