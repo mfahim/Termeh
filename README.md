@@ -34,3 +34,4 @@ Termeh
   - Role Based Security
   - Using very well documented, easy css classes by Semantic-ui 
   - Asp.net Identity Framework has been overridden by using integer as primary key for 'Users' Table.
+  
