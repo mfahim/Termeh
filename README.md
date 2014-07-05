@@ -37,51 +37,50 @@ Termeh
   - Asp.net Identity Framework has been overridden by using integer as primary key for 'Users' Table.
   
 ### Command/Query Objects
-   In this application all of our read actions as a parameter take a query which implements:
+In this application all of our read actions as a parameter take a query which implements:
 
-   ```
-	public interface IQuery<out TResponse> { }
-	```
+```
+public interface IQuery<out TResponse> { }
+```
 	
-	Within the action the query is passed to a bus which locates a handler and returns a view model. 
-	So our API controllers now look something like this:
+Within the action the query is passed to a bus which locates a handler and returns a view model. 
+So our API controllers now look something like this:
 
-	```
-	public class ShowJobsQuery : IQuery<IList<JobView>>
-	{
-	}
-	public IHttpActionResult Get()
-	{
-		var model = Mediator.Request(new ShowJobsQuery());
-		return Ok(model.Data);
-	}
-	```		
+```
+public class ShowJobsQuery : IQuery<IList<JobView>>
+{
+}
+public IHttpActionResult Get()
+{
+  var model = Mediator.Request(new ShowJobsQuery());
+  return Ok(model.Data);
+}
+```		
 	
-	Effectively just passing queries to our mediator and returning the result.
+Effectively just passing queries to our mediator and returning the result.
 	
-	Our command actions take a command which implements:
+Our command actions take a command which implements:
 	
-	```
-	public class EditJobCommand : ICommand
-	{
-		public int Id { get; set; }
-		public decimal JobNumber { get; set; }
-	}
+```
+public class EditJobCommand : ICommand
+{
+  public int Id { get; set; }
+  public decimal JobNumber { get; set; }
+}
 		
-	public IHttpActionResult Put(int id, EditJobCommand jobViewModel)
-	{
-		var response = Mediator.Send(jobViewModel);
+public IHttpActionResult Put(int id, EditJobCommand jobViewModel)
+{
+  var response = Mediator.Send(jobViewModel);
 
-		if (response.HasException())
-			return InternalServerError(BuildUserFriendlyMessage(response));
+  if (response.HasException())
+   return InternalServerError(BuildUserFriendlyMessage(response));
 
-		return Ok(jobViewModel);
-	}
-	```	
+  return Ok(jobViewModel);
+}
+```	
 	
-    Note : There's no need for any manual hand-wirings, as far as any Ioc tool( e.g. Structuremap) can take care of it simply by:
-	```
-	 scan.AddAllTypesOf(typeof(IQueryHandler<,>));
-	 scan.AddAllTypesOf(typeof(ICommandHandler<>));
-	```
-		 
+Note : There's no need for any manual hand-wirings, as far as any Ioc tool( e.g. Structuremap) can take care of it simply by:
+```
+scan.AddAllTypesOf(typeof(IQueryHandler<,>));
+scan.AddAllTypesOf(typeof(ICommandHandler<>));
+```		 
