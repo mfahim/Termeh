@@ -30,11 +30,13 @@ Termeh
 
 ## Available Features
   - REST API with MS Web API 
-  - Implement Command/Query Objects
-  - Leverage Mediator pattern(ShortBus) to promotes loose coupling 
+  - Implement [Command/Query Objects] (http://msdn.microsoft.com/en-us/library/jj554200.aspx) 
+  - Leverage Mediator pattern([ShortBus](https://github.com/mhinze/ShortBus)) to promotes loose coupling 
   - Role Based Security
-  - Using very well documented, easy css classes by Semantic-ui 
-  - Asp.net Identity Framework has been overridden by using integer as primary key for 'Users' Table.
+  - Using very well documented, easy css classes by [Semantic-ui] (http://semantic-ui.com/)
+  - [Asp.net Identity Framework](http://www.asp.net/identity) has been overridden by using integer as primary key for 'Users' Table.
+  - TypeaHead.js for populating proposed items (better searching experience)
+  
   
 ### Command/Query Objects
 In this application all of our read actions as a parameter take a query which implements:
