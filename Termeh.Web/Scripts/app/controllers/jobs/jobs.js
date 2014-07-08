@@ -23,6 +23,8 @@
             $scope.selectedJob = $item;
             $scope.$model = $model;
             $scope.$label = $label;
+
+            $scope.whenEnterPressed();
         };
 
         function init() {
