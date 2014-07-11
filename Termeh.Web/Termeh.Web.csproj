@@ -144,8 +144,6 @@
     <Content Include="Scripts\app\directives\shared\datepicker.js" />
     <Content Include="Scripts\app\directives\shared\itemdelete.js" />
     <Content Include="Scripts\app\directives\shared\jobAttachment.js" />
-    <Content Include="Scripts\app\directives\shared\loadingoverlay.js" />
-    <Content Include="Scripts\app\directives\shared\modal.js" />
     <Content Include="Scripts\app\directives\shared\ngEnter.js" />
     <Content Include="Scripts\app\directives\shared\select2dropdown.js" />
     <Content Include="Scripts\app\directives\shared\topmenu.js" />
