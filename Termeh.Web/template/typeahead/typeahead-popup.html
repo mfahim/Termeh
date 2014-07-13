@@ -1,6 +1,6 @@
 <div class="item">
-	<div class="menu" ng-style="{top: position.top+'px', left: position.left+'px'}" style="display: block;" role="listbox">
-		<div ng-repeat="match in matches track by $index" role="option" id="{{match.id}}">
+	<div class="menu" ng-style="{top: position.top+'px', left: position.left+'px'}" style="display: block;" role="listbox" aria-hidden="{{!isOpen()}}">
+		<div ng-repeat="match in matches track by $index" role="option" ng-mouseenter="selectActive($index)" ng-click="selectMatch($index)" id="{{match.id}}">
 			<div typeahead-match index="$index" match="match" query="query" ></div>
 		</div>
 	</div>	
