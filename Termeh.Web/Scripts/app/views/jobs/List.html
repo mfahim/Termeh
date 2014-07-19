@@ -43,10 +43,9 @@
                     <td>{{job.Quantity}}</td>
                     <td>{{job.AssignedTo}}</td>
                     <td>{{job.AttchmentCount}}</td>
-                    <td>
-                    
+                    <td>                    
                         <a href="/Jobs/Edit/{{job.Id}}"><i class="square edit teal icon"></i></a>
-                        <confirmation-Modal title="Delete Job?" data-ng-click="deleteJob(job.Id)" closable="true"/>
+                        <confirmation-Modal title="Delete Job?" id="{{job.Id}}" on-Delete-Job="deleteJob" closable="true"/>
                     </td>
                 </tr>
             </tbody>

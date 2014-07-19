@@ -5,12 +5,10 @@
 
         $scope.jobs = [];
         $scope.deleteJob = function (jobId) {
-            if (confirmSvc.confirm('Are you sure you want to delete this item?')) {
-                jobDataService.deleteJob(jobId)
-                .then(function (data) {
-                    loadJobs();
-                });
-            }
+            jobDataService.deleteJob(jobId)
+            .then(function (data) {
+                loadJobs();
+            });
         };
 
         init();
