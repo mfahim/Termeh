@@ -2,8 +2,7 @@
     <div class="ui teal ribbon small label">Attachments </div>
     <div data-ng-repeat="attachment in jobAttachments" class="event">
         <div class="label">
-<!--            <a href="javascript:;" data-ng-click="deleteJobAttachment(attachment.Id)"><i class="circular red trash icon"></i></a>-->
-                <confirmation-Modal title="Delete Job?" data-ng-click="deleteJobAttachment(attachment.Id)" closable="true"/>
+            <confirmation-Modal title="Deleting attachment?" id="{{attachment.Id}}" on-Delete-Job="deleteJobAttachment" closable="true"/>
         </div>
         <div class="content">
             <div class="summary">

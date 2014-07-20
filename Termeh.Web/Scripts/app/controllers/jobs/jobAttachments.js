@@ -16,12 +16,10 @@
         }
 
         $scope.deleteJobAttachment = function (jobAttachmentId) {
-            if (confirmSvc.confirm('Are you sure you want to delete this item?')) {
-                jobAttachmentDataService.deleteJobAttachment(jobAttachmentId)
-                .then(function (data) {
-                    loadJobAttachments();
-                });
-            }
+            jobAttachmentDataService.deleteJobAttachment(jobAttachmentId)
+            .then(function (data) {
+                loadJobAttachments();
+            });
         };
     };
     jobAttachmentController.$inject = ['$scope', '$routeParams', 'jobAttachmentDataService', 'confirmSvc'];
