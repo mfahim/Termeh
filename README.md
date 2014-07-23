@@ -36,6 +36,8 @@ Termeh
   - Using very well documented, easy css classes by [Semantic-ui] (http://semantic-ui.com/)
   - [Asp.net Identity Framework](http://www.asp.net/identity) has been overridden by using integer as primary key for 'Users' Table.
   - TypeaHead.js for populating proposed items (better searching experience)
+  - Using AngularJs Directives for maintainable/decouple modules e.g. delete confirmation, datePicker, jobAttachments
+  - Using AngularJs Services by 'promise' pattern which led to having async capabilities when calling server-side functions
   
   
 ### Command/Query Objects
