@@ -12,7 +12,6 @@
                 onSelect: function (d) {
                     ngModelCtrl.$setViewValue(d);
                     scope.$apply();
-                    ngModelCtrl.$setValidity('invalid', false);
                 }
             });
             element.on('keypress', function (e) {

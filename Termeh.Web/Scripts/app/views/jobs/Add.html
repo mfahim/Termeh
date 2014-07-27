@@ -19,12 +19,12 @@
     </div>
     <div class="field">
         <label for="dueDate">DueDate</label>
-        <input id="dueDate" placeholder="DueDate" type="text" cst-datepicker required data-ng-model="job.DueDate" />
+        <input id="dueDate" placeholder="DueDate" type="text" required cst-datepicker data-ng-model="job.DueDate" />
     </div>
     <div class="ui divider"></div>
     <div class="field">
         <label for="quantity">Assigned to </label>
-        <select ui-select2 style="width:100%;" id='userId' ng-required="true" data-placeholder="J" data-ng-model="job.AssignedToUserId">
+        <select ui-select2 style="width:100%;" id='userId' required data-placeholder="J" data-ng-model="job.AssignedToUserId">
             <option value="">--Select--</option>
             <option ng-repeat="p in users" value="{{p.Id}}">{{p.FullName}}</option>
         </select>
