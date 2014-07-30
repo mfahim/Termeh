@@ -1,7 +1,7 @@
 ﻿'use strict';
 (function () {
     var app = angular.module("termeh.controllers");
-    var jobsCtrl = function ($scope, jobDataService, $location, confirmSvc) {
+    var jobsCtrl = function ($scope, jobDataService, $location) {
 
         $scope.jobs = [];
         $scope.deleteJob = function (jobId) {
@@ -37,7 +37,7 @@
             });
         }
     };
-    jobsCtrl.$inject = ['$scope', 'jobDataService', '$location', 'confirmSvc'];
+    jobsCtrl.$inject = ['$scope', 'jobDataService', '$location'];
 
     app.controller("JobsCtrl", jobsCtrl);
 }());

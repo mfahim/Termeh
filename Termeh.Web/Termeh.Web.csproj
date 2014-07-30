@@ -151,7 +151,6 @@
     <Content Include="Scripts\app\services\job\jobDataService.js" />
     <Content Include="Scripts\app\services\job\jobAttachmentDataService.js" />
     <Content Include="Scripts\app\services\job\jobStatusDataService.js" />
-    <Content Include="Scripts\app\services\shared\confirmation.js" />
     <Content Include="Scripts\app\services\shared\helperService.js" />
     <Content Include="Scripts\app\services\user\userDataService.js" />
     <Content Include="Scripts\app\views\about\About.html" />
