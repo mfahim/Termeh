@@ -88,3 +88,4 @@ Note : There's no need for any manual hand-wirings, as far as any Ioc tool( e.g.
 scan.AddAllTypesOf(typeof(IQueryHandler<,>));
 scan.AddAllTypesOf(typeof(ICommandHandler<>));
 ```		 
+
