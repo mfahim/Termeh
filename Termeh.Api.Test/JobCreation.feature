@@ -1,9 +1,9 @@
 ﻿Feature: JobCreation
-	In order to create print job
-	As a customer representative
-	I want to be able to create jobs
+As a customer rep
+    I want to create new jobs
+    So that I can work
 
-@mytag
-Scenario: Add two numbers
+Scenario: Creating a new job
+	Given AddJobCommand with Name ="testJob" and Number ="123" and description ="test job"
 	When I press newJob
-	Then the result should be a new job on Termeh
+	Then the result should be a job

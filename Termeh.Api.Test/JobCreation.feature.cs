@@ -32,8 +32,7 @@ namespace Termeh.Api.Test
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "JobCreation", "In order to create print job\r\nAs a customer representative\r\nI want to be able to " +
-                    "create jobs", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "JobCreation", "As a customer rep\r\n  I want to create new jobs\r\n  So that I can work", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -66,18 +65,18 @@ namespace Termeh.Api.Test
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Add two numbers")]
-        [NUnit.Framework.CategoryAttribute("mytag")]
-        public virtual void AddTwoNumbers()
+        [NUnit.Framework.DescriptionAttribute("Creating a new job")]
+        public virtual void CreatingANewJob()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add two numbers", new string[] {
-                        "mytag"});
-#line 7
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Creating a new job", ((string[])(null)));
+#line 6
 this.ScenarioSetup(scenarioInfo);
+#line 7
+ testRunner.Given("AddJobCommand with Name =\"testJob\" and Number =\"123\" and description =\"test job\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 8
  testRunner.When("I press newJob", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 9
- testRunner.Then("the result should be a new job on Termeh", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("the result should be a job", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
