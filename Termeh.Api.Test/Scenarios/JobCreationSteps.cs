@@ -1,8 +1,10 @@
-﻿using System;
+﻿using System.Web.Http.Routing;
 using JobTrack.Api.Controllers;
 using JobTrack.Api.Data.Commands;
 using ShortBus;
 using TechTalk.SpecFlow;
+using NSubstitute;
+using NUnit.Framework;
 
 namespace Termeh.Api.Test
 {
@@ -17,10 +19,15 @@ namespace Termeh.Api.Test
         public void GivenAddJobCommandWithNameAndNumberAndDescription(string name, int number, string description)
         {
             _jobCommand = new AddJobCommand() {Description = description, Name = name, JobNumber = number};
-            _mediatorMock = NSubstitute.Substitute.For<IMediator>();
+            _mediatorMock = Substitute.For<IMediator>();
 
             _mediatorMock.Send(_jobCommand);
             _jobController = new JobController(_mediatorMock);
+            var mockUrlHelper = Substitute.For<UrlHelper>();
+
+            string apiUrl = "http://api/job/";
+            mockUrlHelper.Link(Arg.Any<string>(), Arg.Any<object>()).Returns(apiUrl);
+            _jobController.Url = mockUrlHelper;
         }
         
         [When(@"I press newJob")]
@@ -29,10 +36,10 @@ namespace Termeh.Api.Test
             _jobController.Post(_jobCommand);
         }
 
-        //[Then(@"the result should be a job")]
-        //public void TheResultShouldBeAJob()
-        //{
-
-        //}
+        [Then(@"the result should be a job with Name=""(.*)""")]
+        public void TheResultShouldBeAJob(string jobName)
+        {
+            Assert.That(jobName, Is.EqualTo(_jobCommand.JobNumber));
+        }
     }
 }

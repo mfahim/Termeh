@@ -34,7 +34,8 @@ namespace JobTrack.Api.Controllers
                 return InternalServerError(BuildUserFriendlyMessage(response));
 
             //return Ok(jobViewModel);
-            return Created(Url.Link("DefaultApi", new { controller = "Job" }), jobViewModel);
+            var urlLink = Url.Link("DefaultApi", new {controller = "Job"});
+            return Created(urlLink, jobViewModel);
         }
 
         [HttpPut]
