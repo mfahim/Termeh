@@ -17,7 +17,7 @@ namespace Termeh.Api.Test.UnitTests.Job
     public class WhenCreatingAJob
     {
         [Test]
-        public void ShouldReturnTrue()
+        public void ShouldReturnHttpStatusOk()
         {
             var jobCommand = new AddJobCommand() { Description = "zz", Name = "qq", JobNumber = 104 };
             var mediatorMock = Substitute.For<IMediator>();

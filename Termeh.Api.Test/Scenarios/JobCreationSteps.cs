@@ -6,7 +6,7 @@ using TechTalk.SpecFlow;
 using NSubstitute;
 using NUnit.Framework;
 
-namespace Termeh.Api.Test
+namespace Termeh.Api.Test.Scenarios
 {
     [Binding]
     public class JobCreationSteps
@@ -39,7 +39,7 @@ namespace Termeh.Api.Test
         [Then(@"the result should be a job with Name=""(.*)""")]
         public void TheResultShouldBeAJob(string jobName)
         {
-            Assert.That(jobName, Is.EqualTo(_jobCommand.JobNumber));
+            Assert.That(jobName, Is.EqualTo(_jobCommand.Name));
         }
     }
 }
