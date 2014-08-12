@@ -10,6 +10,7 @@ using JobTrack.Api.Data.Queries.Job;
 using JobTrack.Api.Models.Job;
 using NSubstitute;
 using NUnit.Framework;
+using Newtonsoft.Json;
 using ShortBus;
 using TechTalk.SpecFlow;
 
@@ -40,7 +41,9 @@ namespace Termeh.Api.Test.Scenarios
         [When(@"I press get details")]
         public void WhenIPressGetDetails()
         {
-            _jobController.Get(_id).ExecuteAsync(CancellationToken.None);
+            var content = _jobController.Get(_id).ExecuteAsync(CancellationToken.None).Result.Content.ReadAsStringAsync().Result;
+            var t = JsonConvert.DeserializeObject<JobView>(content);
+
         }
         
         [Then(@"the result should be a job details with Id=""(.*)""")]
