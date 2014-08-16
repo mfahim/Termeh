@@ -1,5 +1,6 @@
 using System;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web.Http;
 using ShortBus;
 
@@ -14,6 +15,20 @@ namespace JobTrack.Api.Controllers
             Mediator = mediator;
         }
 
+        protected Response<TResult> Query<TResult>(IQuery<TResult> query)
+        {
+            return Mediator.Request(query);
+        }
+
+        protected void Command<T>(T command)
+        {
+            var result = Mediator.Send(command);
+            if (result.HasException())
+            {
+                throw result.Exception;
+            }
+        }
+        
         protected Exception BuildUserFriendlyMessage(Response response)
         {
             if (!response.HasException())

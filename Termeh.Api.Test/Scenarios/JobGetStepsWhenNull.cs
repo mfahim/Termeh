@@ -1,4 +1,5 @@
-﻿using System.Web.Http.Results;
+﻿using System;
+using System.Web.Http.Results;
 using JobTrack.Api.Controllers;
 using JobTrack.Api.Data.Queries.Job;
 using JobTrack.Api.Models.Job;
@@ -7,31 +8,29 @@ using NUnit.Framework;
 using ShortBus;
 using TechTalk.SpecFlow;
 
-namespace Termeh.Api.Test.Scenarios
+namespace Termeh.Api.Test
 {
     [Binding]
-    public class JobGetSteps
+    public class JobGetStepsWhenNull
     {
         private JobController _jobController;
         private IMediator _mediatorMock;
         private IndexJobQuery _jobCommand;
         private JobView _jobView;
 
-        [Given(@"IndexJobQuery with Id =""(.*)""")]
-        public void GivenIndexJobQueryWithId(int id)
+        [Given(@"IndexJobQuery with Id =""(.*)"" And jobId is not available")]
+        public void GivenIndexJobQueryWithIdAndJobIdIsNotAvailable(int id)
         {
             _jobCommand = new IndexJobQuery() { Id = id };
-            var jobView = new JobView() { Id = id, Name = "testJob"};
             _mediatorMock = Substitute.For<IMediator>();
 
-            var response = new Response<JobView>() {Data = jobView};
+            var response = new Response<JobView>() { Data = null };
             _mediatorMock.Request(_jobCommand).Returns(response);
             _jobController = new JobController(_mediatorMock);
-            //SetupControllerForTests(_jobController);
         }
-        
-        [When(@"I press get details")]
-        public void WhenIPressGetDetails()
+
+        [When(@"I press get unavailable")]
+        public void IPressGetUnavailable()
         {
             var actionResult = _jobController.Get(_jobCommand);
             var conNegResult = actionResult as OkNegotiatedContentResult<JobView>;
@@ -39,11 +38,11 @@ namespace Termeh.Api.Test.Scenarios
 
             _jobView = conNegResult.Content;
         }
-        
-        [Then(@"the result should be a job details with Id=""(.*)""")]
-        public void ThenTheResultShouldBeAJobDetailsWithId(int id)
+
+        [Then(@"the result should be a null")]
+        public void ThenTheResultShouldBeANull()
         {
-            Assert.That(_jobView.Id, Is.EqualTo(id));
+            Assert.Null(_jobView);
         }
     }
 }
