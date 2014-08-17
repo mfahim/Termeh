@@ -64,6 +64,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Scenarios\JobGetAll.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>JobGetAll.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Scenarios\JobGetAllSteps.cs" />
     <Compile Include="Scenarios\JobGetStepsWhenNull.cs" />
     <Compile Include="Scenarios\JobCreation.feature.cs">
       <AutoGen>True</AutoGen>
@@ -90,6 +96,10 @@
     <None Include="Scenarios\JobGet.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>JobGet.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Scenarios\JobGetAll.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>JobGetAll.feature.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
