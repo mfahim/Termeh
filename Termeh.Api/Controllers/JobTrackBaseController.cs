@@ -20,14 +20,14 @@ namespace JobTrack.Api.Controllers
             return Mediator.Request(query);
         }
 
-        protected void Command<T>(T command)
-        {
-            var result = Mediator.Send(command);
-            if (result.HasException())
-            {
-                throw result.Exception;
-            }
-        }
+        //protected void Command<T>(T command)
+        //{
+        //    var result = Mediator.Send(command);
+        //    if (result.HasException())
+        //    {
+        //        throw result.Exception;
+        //    }
+        //}
         
         protected Exception BuildUserFriendlyMessage(Response response)
         {

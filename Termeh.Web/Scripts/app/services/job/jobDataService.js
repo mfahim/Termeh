@@ -8,7 +8,7 @@
             getTopFiveJobs: function() {
                 return jobApi.query({ count: 5 });
             },
-            getJobs: function() {
+            getJobs: function () {
                 return jobApi.query();
             },
             deleteJob: function(jobId) {
