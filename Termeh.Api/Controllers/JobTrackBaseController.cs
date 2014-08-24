@@ -15,7 +15,7 @@ namespace JobTrack.Api.Controllers
             Mediator = mediator;
         }
 
-        protected Response<TResult> Query<TResult>(IQuery<TResult> query)
+        public Response<TResult> Query<TResult>(IQuery<TResult> query)
         {
             return Mediator.Request(query);
         }
