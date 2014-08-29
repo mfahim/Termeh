@@ -25,20 +25,20 @@ namespace Termeh.Api.Test.Scenarios
             _jobCommand = new ShowJobsQuery();
             var jobViews = new List<JobView>() { new JobView(){ Id = 1, Name = "test1"}};
             _mediatorMock = Substitute.For<IMediator>();
-
             var response = new Response<IList<JobView>>() { Data = jobViews };
-            _mediatorMock.Request(_jobCommand).Returns(response);
+            //_mediatorMock.Request(Query new ShowJobsQuery()).Returns(response);
+            //_mediatorMock.Request(_jobCommand).Returns(response);
             _jobController = new JobController(_mediatorMock);
         }
         
         [When(@"I press get all jobs")]
         public void WhenIPressGetAllJobs()
         {
-            //var actionResult = _jobController.Get(_jobCommand);
-            //var conNegResult = actionResult as OkNegotiatedContentResult<IList<JobView>>;
-            //Assert.IsInstanceOf(typeof(OkNegotiatedContentResult<IList<JobView>>), conNegResult);
+            var actionResult = _jobController.Get();
+            var conNegResult = actionResult as OkNegotiatedContentResult<IList<JobView>>;
+            Assert.IsInstanceOf(typeof(OkNegotiatedContentResult<IList<JobView>>), conNegResult);
 
-            //_jobViews = conNegResult.Content;
+            _jobViews = conNegResult.Content;
         }
         
         [Then(@"the result should be list of jobs")]

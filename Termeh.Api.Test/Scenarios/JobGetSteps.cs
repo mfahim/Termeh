@@ -20,24 +20,24 @@ namespace Termeh.Api.Test.Scenarios
         [Given(@"IndexJobQuery with Id =""(.*)""")]
         public void GivenIndexJobQueryWithId(int id)
         {
-            _jobCommand = new IndexJobQuery() { Id = id };
             var jobView = new JobView() { Id = id, Name = "testJob"};
             _mediatorMock = Substitute.For<IMediator>();
 
             var response = new Response<JobView>() {Data = jobView};
             _mediatorMock.Request(_jobCommand).Returns(response);
             _jobController = new JobController(_mediatorMock);
+            //_jobController.Query((new ShowJobsQuery()) new IndexJobQuery() { Id = id };
             //SetupControllerForTests(_jobController);
         }
         
         [When(@"I press get details")]
         public void WhenIPressGetDetails()
         {
-            //var actionResult = _jobController.Get(_jobCommand);
-            //var conNegResult = actionResult as OkNegotiatedContentResult<JobView>;
-            //Assert.IsInstanceOf(typeof(OkNegotiatedContentResult<JobView>), conNegResult);
+            var actionResult = _jobController.Get(_jobCommand.Id);
+            var conNegResult = actionResult as OkNegotiatedContentResult<JobView>;
+            Assert.IsInstanceOf(typeof(OkNegotiatedContentResult<JobView>), conNegResult);
 
-            //_jobView = conNegResult.Content;
+            _jobView = conNegResult.Content;
         }
         
         [Then(@"the result should be a job details with Id=""(.*)""")]
