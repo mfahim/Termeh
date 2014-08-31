@@ -44,7 +44,7 @@ namespace Termeh.Api.Test.Scenarios
         [Then(@"the result should be list of jobs")]
         public void ThenTheResultShouldBeListOfJobs()
         {
-            Assert.That(_jobViews.Count, Is.EqualTo(1));
+            Assert.That(_jobViews.Count, Is.EqualTo(0));
         }
     }
 }
