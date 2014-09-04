@@ -49,4 +49,12 @@ namespace Termeh.Api.Test.UnitTests.Job
             controller.Request.Properties[HttpPropertyKeys.HttpConfigurationKey] = config;              
         }
     }
+
+    public class MappingService : AutoMapper.IMappingEngine
+    {
+        public TDest Map<TSrc, TDest>(TSrc source) where TDest : class
+        {
+            return AutoMapper.Mapper.Map<TSrc, TDest>(source);
+        }
+    }
 }
