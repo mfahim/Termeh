@@ -17,7 +17,6 @@ namespace JobTrack.Api.DependencyResolution
             //For(typeof(IdentityUser<int, TermehUserLogin, TermehUserRole, TermehUserClaim>)).Use(typeof(JobTrackDbContext)).CtorDependency<string>("connectionString").Is(ConfigurationManager.ConnectionStrings["JobTrackDbContext"].Name);
             For<DbContext>().Use<JobTrackDbContext>().Ctor<string>("connectionString").Is(ConfigurationManager.ConnectionStrings["JobTrackDbContext"].Name);
             For<ILog>().Use(LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType));
-            For<AutoMapper.IMappingEngine>().Use(() => AutoMapper.Mapper.Engine);
         }
     }
 }

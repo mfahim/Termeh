@@ -50,11 +50,4 @@ namespace Termeh.Api.Test.UnitTests.Job
         }
     }
 
-    public class MappingService : AutoMapper.IMappingEngine
-    {
-        public TDest Map<TSrc, TDest>(TSrc source) where TDest : class
-        {
-            return AutoMapper.Mapper.Map<TSrc, TDest>(source);
-        }
-    }
 }
