@@ -7,6 +7,7 @@ using System.Web.Http.Hosting;
 using System.Web.Http.Routing;
 using JobTrack.Api.Controllers;
 using JobTrack.Api.Data.Commands;
+using JobTrack.Api.Data.Queries.Job;
 using NSubstitute;
 using NUnit.Framework;
 using ShortBus;
@@ -47,6 +48,30 @@ namespace Termeh.Api.Test.UnitTests.Job
             controller.ControllerContext = new HttpControllerContext(config, routeData, request);
             controller.Request = request;
             controller.Request.Properties[HttpPropertyKeys.HttpConfigurationKey] = config;              
+        }
+
+        [Test]
+        public void Should_CallShowJobsQuery_With_GetAllJobs()
+        {
+            var mediatorMock = Substitute.For<IMediator>();
+
+            var jobCtrl = Substitute.For<JobController>(mediatorMock);
+
+            jobCtrl.Get();
+            jobCtrl.Received().Query(Arg.Any<ShowJobsQuery>());
+        }
+
+        [Test]
+        public void Should_CallShowJobsQuery_With_GetOneJob()
+        {
+            int jobId = 2;
+            var mediatorMock = Substitute.For<IMediator>();
+
+            var jobCtrl = Substitute.For<JobController>(mediatorMock);
+
+            jobCtrl.Get(jobId);
+            var arg = Arg.Any<IndexJobQuery>();
+            jobCtrl.Received().Query(arg);
         }
     }
 
