@@ -73,6 +73,18 @@ namespace Termeh.Api.Test.UnitTests.Job
             var arg = Arg.Any<IndexJobQuery>();
             jobCtrl.Received().Query(arg);
         }
-    }
 
+        [Test]
+        public void Should_CallAddJobCommand_With_AddJob()
+        {
+            int jobId = 2;
+            var mediatorMock = Substitute.For<IMediator>();
+
+            var jobCtrl = Substitute.For<JobController>(mediatorMock);
+
+            var arg = Arg.Any<AddJobCommand>();
+            jobCtrl.Post(arg);
+            mediatorMock.Received(1);
+        }
+    }
 }
