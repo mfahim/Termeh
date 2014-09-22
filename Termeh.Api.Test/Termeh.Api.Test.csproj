@@ -93,6 +93,7 @@
     </Compile>
     <Compile Include="Scenarios\JobGetSteps.cs" />
     <Compile Include="UnitTests\Job\WhenCreatingAJob.cs" />
+    <Compile Include="UnitTests\User\When_Getting_ListOfUsers.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
