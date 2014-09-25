@@ -86,5 +86,18 @@ namespace Termeh.Api.Test.UnitTests.Job
             jobCtrl.Post(arg);
             mediatorMock.Received(1);
         }
+
+        [Test]
+        public void Should_CallEditJobCommand_With_EditJob()
+        {
+            int jobId = 2;
+            var mediatorMock = Substitute.For<IMediator>();
+
+            var jobCtrl = Substitute.For<JobController>(mediatorMock);
+
+            var arg = new EditJobCommand();
+            jobCtrl.Put(jobId, arg);
+            mediatorMock.Received(1);
+        }
     }
 }
