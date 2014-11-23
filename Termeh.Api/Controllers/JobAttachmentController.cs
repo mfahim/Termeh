@@ -37,7 +37,7 @@ namespace JobTrack.Api.Controllers
 
             if (response.HasException())
                 return InternalServerError(response.Exception);
-            return Ok();
+            return Ok(attachmentId);
         }
 
     }
