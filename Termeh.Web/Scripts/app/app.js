@@ -9,8 +9,10 @@
 
             $httpProvider.defaults.useXDomain = true;
             delete $httpProvider.defaults.headers.common['X-Requested-With'];
-            $httpProvider.defaults.useXDomain = true;
-            $locationProvider.html5Mode(true);
+            $locationProvider.html5Mode({
+                enabled: true,
+                requireBase: false
+            });
             $routeProvider
                 .when('/Login', { templateUrl: '/Scripts/app/views/login/Login.html' })
                 .when('/About', { templateUrl: '/Scripts/app/views/about/About.html' })
