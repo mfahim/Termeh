@@ -5,6 +5,7 @@ using ShortBus;
 
 namespace JobTrack.Api.Controllers
 {
+    [TermehAuthAttribute]
     public class JobController : JobTrackBaseController
     {
         public JobController(IMediator mediator) :
