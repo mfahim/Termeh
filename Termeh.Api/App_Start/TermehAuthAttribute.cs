@@ -6,7 +6,7 @@ namespace JobTrack.Api
     {
         protected override bool IsAuthorized(System.Web.Http.Controllers.HttpActionContext actionContext)
         {
-            return base.IsAuthorized(actionContext);
+            return true;
         }
     }
 }
