@@ -15,11 +15,6 @@ namespace JobTrack.Api.Controllers
             Mediator = mediator;
         }
 
-        public Response<TResult> Query<TResult>(IQuery<TResult> query)
-        {
-            return Mediator.Request(query);
-        }
-
         //protected void Command<T>(T command)
         //{
         //    var result = Mediator.Send(command);

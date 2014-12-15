@@ -15,13 +15,13 @@ namespace JobTrack.Api.Controllers
 
         public IHttpActionResult Get()
         {
-            var model = Query(new ShowJobsQuery());
+            var model = Mediator.Request(new ShowJobsQuery());
             return Ok(model.Data);
         }
 
         public IHttpActionResult Get(int id)
         {
-            var model = Query(new IndexJobQuery() { Id = id});
+            var model = Mediator.Request(new IndexJobQuery() { Id = id });
             return Ok(model.Data);
         }
 
