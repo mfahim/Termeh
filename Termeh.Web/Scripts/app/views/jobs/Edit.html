@@ -24,6 +24,7 @@
     <div class="ui divider"></div>
     <div class="field">
         <label for="quantity">Assigned to </label>
+        <label >UserId : {{job.AssignedToUserId}}</label>
         <select ui-select2 style="width:100%;" id='userId' ng-required="true" data-placeholder="J" data-ng-model="job.AssignedToUserId">
             <option value="">--Select--</option>
             <option ng-repeat="p in users" value="{{p.Id}}">{{p.FullName}}</option>

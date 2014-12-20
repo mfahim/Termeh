@@ -168,7 +168,6 @@
     <Content Include="Scripts\libs\angular-cookies.min.js" />
     <Content Include="Scripts\libs\angular-resource.min.js" />
     <Content Include="Scripts\libs\angular-route.min.js" />
-    <Content Include="Scripts\libs\angular-ui\select2.js" />
     <Content Include="Scripts\libs\angular-ui\ui-bootstrap-tpls-0.12.0.min.js" />
     <Content Include="Scripts\libs\angular.min.js" />
     <Content Include="Scripts\libs\jquery-1.9.1.js" />
