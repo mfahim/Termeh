@@ -9,8 +9,7 @@
   "ignore": [
     "**/.*",
     "node_modules",
-    "bower_components",
-    "test",
-    "tests"
+	"ui-select.js",
+	"semantic-ui.js"
   ]
 }
