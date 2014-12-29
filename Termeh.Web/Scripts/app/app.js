@@ -1,7 +1,7 @@
 ﻿(function() {
     angular.module("termeh.services", []);
     angular.module("termeh.controllers", []);
-    var app = angular.module("termeh", ['ui.select2', 'ui.bootstrap', 'ngRoute', 'ngResource', 'ngAnimate',
+    var app = angular.module("termeh", ['ui.bootstrap', 'ngRoute', 'ngResource', 'ngAnimate',
     'termeh.controllers', 'termeh.services']);
 
     app.config(['$routeProvider', '$locationProvider', '$httpProvider', '$provide',
